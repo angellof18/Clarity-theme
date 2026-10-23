@@ -1716,6 +1716,7 @@ group { name: "e/fileman/default/icon/fixed";
 
 group { name: "e/fileman/desktop/icon/fixed";
    inherit: "e/fileman/default/icon/fixed";
+   images.image: "win_rounded.png" COMP;
    alias: "e/fileman/desktop/icon/variable";
    styles {
       style { name: "fileman_icon_name_desktop";
@@ -1731,7 +1732,7 @@ group { name: "e/fileman/desktop/icon/fixed";
             visible: 0;
          }
       }
-      part { name: "back"; type: RECT; mouse_events: 0;
+      part { name: "back"; mouse_events: 0;
          insert_before: "e.text.label";
          clip_to: "textmaster";
          scale: 1;
@@ -1739,6 +1740,10 @@ group { name: "e/fileman/desktop/icon/fixed";
             rel.to: "labelmin";
             rel1.offset: -3 -3;
             rel2.offset: 2 2;
+	 image.normal: "win_rounded.png";
+            image.border: 4 4 4 4;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/fileman/desk/base";
             fixed: 1 1;
             offscale;

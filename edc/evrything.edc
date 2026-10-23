@@ -1,4 +1,5 @@
 group { name: "e/modules/everything/main";
+   images.image: "win_rounded_top.png" COMP;
    parts {
       part { name: "list"; type: GROUP;
          source: "e/modules/everything/list";
@@ -10,13 +11,17 @@ group { name: "e/modules/everything/main";
             rel1.relative: 0.0 1.0;
          }
       }
-      part { name: "base"; type: RECT;
+      part { name: "base";
          scale: 1;
          description { state: "default" 0.0;
             min: 320 64;
             rel2.relative: 1.0 0.0;
             align: 0.5 0.0;
             fixed: 1 1;
+	 image.normal: "win_rounded_top.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/everything/selector";
          }
       }
@@ -223,6 +228,7 @@ group { name: "e/modules/everything/selector_item";
 }
 
 group { name: "e/modules/everything/list";
+   images.image: "win_rounded_bottom.png" COMP;
    parts {
       part { name: "input_base"; type: RECT;
          scale: 1;
@@ -244,13 +250,17 @@ group { name: "e/modules/everything/list";
             color_class: "/bg/normal/everything/list/base";
          }
       }
-      part { name: "bar_base"; type: RECT;
+      part { name: "bar_base";
          scale: 1;
          description { state: "default" 0.0;
             fixed: 0 1;
             rel1.relative: 0.0 1.0;
             align: 0.5 1.0;
             min: 64 32;
+	 image.normal: "win_rounded_bottom.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/everything/tabs";
          }
       }
@@ -1227,9 +1237,14 @@ group { name: "e/modules/everything/thumbview/item/thumb";
 group { name: "e/modules/everything/thumbview/item/list";
    data.item: "stacking" "below";
    data.item: "selectraise" "on";
+   images.image: "win_rounded.png" COMP;
    parts {
-      part { name: "sel_base"; type: RECT; mouse_events: 0;
+      part { name: "sel_base"; mouse_events: 0;
          description { state: "default" 0.0;
+	 image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/selected/everything/list/item";
             visible: 0;
          }
@@ -1453,9 +1468,14 @@ group { name: "e/modules/everything/textblock";
 }
 
 group { name: "e/modules/everything/tab_item";
+   images.image: "win_rounded.png" COMP;
    parts {
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; mouse_events: 0;
          description { state: "default" 0.0;
+	 image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/selected/everything/tab/item";
             visible: 0;
          }

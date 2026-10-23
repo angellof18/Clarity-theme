@@ -1,6 +1,6 @@
 group { name: "elm/frame/base/default";
    images.image: "win_shad_flat.png" COMP;
-   images.image: "win_rounded.png" COMP;
+   images.image: "win_rounded_bottom.png" COMP;
    images.image: "win_rounded_top.png" COMP;
    parts {
       part { name: "shadow"; type: RECT;
@@ -62,7 +62,7 @@ group { name: "elm/frame/base/default";
             rel1.to_y: "top";
             rel1.relative: 0.0 1.0;
             rel2.to: "base";
-            image.normal: "win_rounded.png";
+            image.normal: "win_rounded_bottom.png";
             image.border: 12 12 12 12;
             image.middle: SOLID;
             fill.smooth: 0;

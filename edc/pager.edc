@@ -1,7 +1,12 @@
 group { name: "e/modules/pager/popup";
+   images.image: "win_rounded.png" COMP;
    parts {
-      part { name: "base"; type: RECT;
+      part { name: "base";
          description { state: "default" 0.0;
+	 image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/popup/pager";
          }
       }

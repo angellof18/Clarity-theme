@@ -146,6 +146,7 @@ group { name: "elm/scroller/entry/default";
 group { name: "elm/scroller/entry_single/default";
    alias: "elm/scroller/entry_single/combobox_vertical/default";
    images.image: "shadow_circle_vert.png" COMP;
+   images.image: "win_rounded.png" COMP;
 
    data.item: "focus_highlight" "on";
    parts {
@@ -194,9 +195,13 @@ group { name: "elm/scroller/entry_single/default";
          }
 
       }
-      part { name: "bg"; type: RECT;
+      part { name: "bg";
          description { state: "default" 0.0;
             rel.to: "elm.swallow.background";
+	 image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/entry";
          }
       }

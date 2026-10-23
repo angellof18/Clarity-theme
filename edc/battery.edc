@@ -1,0 +1,234 @@
+group { name: "e/modules/battery/main";
+   min: 16 16;
+   script {
+      public load_time;
+      public is_charging; // 0 = descargando, 1 = cargando
+
+      public update_battery_state(Float:val) {
+         new charging = get_int(is_charging);
+
+         if (charging == 1) {
+            if (val <= 0.10)
+               set_state(PART:"battery_icon", "charging_empty", 0.0);
+            else if (val <= 0.25)
+               set_state(PART:"battery_icon", "charging_caution", 0.0);
+            else if (val <= 0.50)
+               set_state(PART:"battery_icon", "charging_low", 0.0);
+            else if (val <= 0.80)
+               set_state(PART:"battery_icon", "charging_good", 0.0);
+            else
+               set_state(PART:"battery_icon", "charging_full", 0.0);
+         } else {
+            if (val <= 0.10)
+               set_state(PART:"battery_icon", "empty", 0.0);
+            else if (val <= 0.25)
+               set_state(PART:"battery_icon", "caution", 0.0);
+            else if (val <= 0.50)
+               set_state(PART:"battery_icon", "low", 0.0);
+            else if (val <= 0.80)
+               set_state(PART:"battery_icon", "good", 0.0);
+            else
+               set_state(PART:"battery_icon", "full", 0.0);
+         }
+      }
+
+      public message(Msg_Type:type, id, ...) {
+         if ((type == MSG_FLOAT) && (id == 1)) {
+            new Float:val = getfarg(2);
+            update_battery_state(val);
+         }
+      }
+
+      public Float:year_sec() {
+         new year, month, day, yearday, weekday, hour, minute;
+         new Float:second;
+         date(year, month, day, yearday, weekday, hour, minute, second);
+         return seconds() + float(yearday * 24 * 3600);
+      }
+
+      public run_prog_later(prog) {
+         new Float:second, Float:start;
+         second = Float:year_sec();
+         start = get_float(load_time);
+         if ((second - start) > float(5)) run_program(prog);
+      }
+   }
+   parts {
+      part { name: "pulse_clip"; type: RECT;
+         description { state: "default" 0.0;
+            rel.to: "battery_icon";
+         }
+         description { state: "faded" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 128;
+         }
+      }
+
+      part { name: "info_clip"; type: RECT;
+         description { state: "default" 0.0;
+            rel.to: "battery_icon";
+            color_class: "/fg/normal/gadgets/battery/text/info";
+            color: 255 255 255 0;
+         }
+         description { state: "visible" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+
+      part { name: "battery_icon"; type: IMAGE;
+         scale: 1;
+         clip_to: "pulse_clip";
+         description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: (15/160) (15/160);
+            rel2.relative: (145/160) (145/160);
+            aspect: 1.0 1.0; 
+            aspect_preference: BOTH;
+            image.normal: "bat_full";
+	 color_class: ":fg";
+         }
+         description { state: "empty" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_empty";
+         }
+         description { state: "caution" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_caution";
+         }
+         description { state: "low" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_low";
+         }
+         description { state: "good" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_good";
+         }
+         description { state: "full" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_full";
+         }
+         description { state: "charging_empty" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_empty_charging";
+         }
+         description { state: "charging_caution" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_caution_charging";
+         }
+         description { state: "charging_low" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_low_charging";
+         }
+         description { state: "charging_good" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_good_charging";
+         }
+         description { state: "charging_full" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "bat_full_charging";
+         }
+      }
+
+      part { name: "e.text.reading"; type: TEXT; mouse_events: 0;
+         scale: 1;
+         clip_to: "info_clip";
+         description { state: "default" 0.0;
+            align: 0.5 0.0;
+            rel.to: "battery_icon";
+            rel1.relative: 0.25 0.15;
+            rel2.relative: 0.75 0.53;
+            color_class: "/fg/normal/gadgets/battery/text/reading";
+            text { font: FN; size: 8;
+               min: 0 1;
+               fit: 1 1;
+               ellipsis: -1;
+               align: 0.5 0.5;
+               text_class: "module_small";
+            }
+         }
+      }
+
+      part { name: "e.text.time"; type: TEXT; mouse_events: 0;
+         scale: 1;
+         clip_to: "info_clip";
+         description { state: "default" 0.0;
+            align: 0.5 1.0;
+            rel.to: "battery_icon";
+            rel1.relative: 0.25 0.47;
+            rel2.relative: 0.75 0.85;
+            color_class: "/fg/normal/gadgets/battery/text/time";
+            text { font: FN; size: 8;
+               min: 0 1;
+               fit: 1 1;
+               ellipsis: -1;
+               align: 0.5 0.5;
+               text_class: "module_small";
+            }
+         }
+      }
+
+      part { name: "over"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+      }
+   }
+   programs {
+      program { signal: "load"; source: "";
+         script { set_float(load_time, year_sec()); }
+      }
+      program { signal: "e,state,ac,on"; source: "e";
+         script { run_prog_later(PROGRAM:"ac_on"); }
+      }
+      program { name: "ac_on";
+         action: PLAY_SAMPLE "synth-worble-up" 1.0 ALERT;
+      }
+      program { signal: "e,state,ac,off"; source: "e";
+         script { run_prog_later(PROGRAM:"ac_off"); }
+      }
+      program { name: "ac_off";
+         action: PLAY_SAMPLE "synth-worble-dn" 1.0 ALERT;
+      }
+      program { signal: "e,state,charging"; source: "e";
+         script { set_int(is_charging, 1); }
+      }
+      program { signal: "e,state,discharging"; source: "e";
+         script { set_int(is_charging, 0); }
+      }
+      program { name: "pulse";
+         signal: "e,action,pulse,start"; source: "e";
+         action: STATE_SET "faded" 0.0;
+         transition: ACCELERATE 0.3;
+         after: "pulse2";
+         target: "pulse_clip";
+      }
+      program { name: "pulse2";
+         action: STATE_SET "default" 0.0;
+         transition: ACCELERATE 0.1;
+         target: "pulse_clip";
+         after: "pulse";
+      }
+      program { signal: "e,action,pulse,stop"; source: "e";
+         action: ACTION_STOP;
+         target: "pulse";
+         target: "pulse2";
+         after: "pulse3";
+      }
+      program { name: "pulse3";
+         signal: "e,action,pulse,stop"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "pulse_clip";
+      }
+      program { signal: "mouse,in"; source: "over";
+         action: STATE_SET "visible" 0.0;
+         transition: SINUSOIDAL 0.3;
+         target: "info_clip";
+      }
+      program { signal: "mouse,out"; source: "over";
+         action: STATE_SET "default" 0.0;
+         transition: SINUSOIDAL 0.3;
+         target: "info_clip";
+      }
+   }
+}

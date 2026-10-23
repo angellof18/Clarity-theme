@@ -1,0 +1,33 @@
+group { name: "e/modules/bluez4/main";
+   min: 16 16;
+   parts {
+      part { name: "base"; type: IMAGE;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: (15/160) (15/160);
+            rel2.relative: (145/160) (145/160);
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            image.normal: "bluetooth_on";
+	 color_class: ":fg";
+         }
+      }
+   }
+}
+
+group { name: "e/modules/bluez4/inactive";
+   min: 16 16;
+   parts {
+      part { name: "base"; type: IMAGE;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: (15/160) (15/160);
+            rel2.relative: (145/160) (145/160);
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            image.normal: "bluetooth_off";
+	 color_class: ":fg";
+         }
+      }
+   }
+}

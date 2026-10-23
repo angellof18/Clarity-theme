@@ -1,0 +1,58 @@
+group { name: "e/modules/mixer/main";
+   max: 160 160;
+   min: 16 16;
+   script {
+      public message(Msg_Type:type, id, ...) {
+         if ((type == MSG_INT_SET) && (id == 0)) {
+            new m, l, r, val;
+
+            m = getarg(2); // Estado Mute (1 o 0)
+            l = getarg(3); // Volumen Izquierdo
+            r = getarg(4); // Volumen Derecho
+
+            // Promedio del volumen general
+            val = (l + r) / 2;
+
+            if (m) {
+               set_state(PART:"icon", "muted", 0.0);
+            } else if (val == 0) {
+               set_state(PART:"icon", "muted", 0.0);
+            } else if (val < 33) {
+               set_state(PART:"icon", "low", 0.0);
+            } else if (val < 66) {
+               set_state(PART:"icon", "medium", 0.0);
+            } else {
+               set_state(PART:"icon", "high", 0.0);
+            }
+         }
+      }
+   }
+   parts {
+      part { name: "icon"; type: IMAGE;
+         description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: (15/160) (15/160);
+            rel2.relative: (145/160) (145/160);
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            image.normal: "vol_high";
+	 color_class: ":fg";
+         }
+         description { state: "high" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "vol_high";
+         }
+         description { state: "medium" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "vol_medium";
+         }
+         description { state: "low" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "vol_low";
+         }
+         description { state: "muted" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "vol_muted";
+         }
+      }
+   }
+}

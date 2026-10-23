@@ -1,0 +1,47 @@
+group { name: "e/modules/backlight/main";
+   alias: "e/modules/backlight/main_vert";
+   min: 16 16;
+   script {
+      public message(Msg_Type:type, id, ...) {
+         if ((type == MSG_FLOAT) && (id == 0)) {
+            new Float:val;
+            val = getfarg(2);
+            
+            if (val <= 0.25) {
+               set_state(PART:"icon", "default", 0.0);
+            } else if (val <= 0.50) {
+               set_state(PART:"icon", "medium", 0.0);
+            } else if (val <= 0.75) {
+               set_state(PART:"icon", "high", 0.0);
+            } else {
+               set_state(PART:"icon", "full", 0.0);
+            }
+         }
+      }
+   }
+   parts {
+      part { name: "icon"; type: IMAGE;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: (15/160) (15/160);
+            rel2.relative: (145/160) (145/160);
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            image.normal: "backlight_low";
+	 color_class: ":fg";
+         }
+         description { state: "medium" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "backlight_medium";
+         }
+         description { state: "high" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "backlight_high";
+         }
+         description { state: "full" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "backlight_full";
+         }
+      }
+   }
+}

@@ -655,11 +655,11 @@ color_classes {
    color_class { name: "/bg/normal/everything/entry";
       color:  50  50  50 255; }
    color_class { name: "/bg/normal/everything/list/base";
-      color:  32  32  32 255; }
+      color:  32  32  32 230; }
    color_class { name: "/bg/normal/everything/selector";
-      color:  32  32  32 255; }
+      color:  32  32  32 230; }
    color_class { name: "/bg/normal/everything/tabs";
-      color:  32  32  32 255; }
+      color:  32  32  32 230; }
    color_class { name: "/bg/normal/fileman/desk/base";
       color:  43  43  43 0; }
    color_class { name: "/bg/normal/frame";
@@ -704,6 +704,12 @@ color_classes {
       color:  60  60  60 0; }
    color_class { name: "/bg/selected/toolbar/base";
       color:  58  58  58 255; }
+   color_class { name: "/fg/normal/grid/item/fileman/desktop";
+      color:  192  192  192 255; }
+   color_class { name: "/bg/normal/border/resize";
+      color:  43  43  43 0; }
+   color_class { name: "/bg/normal/notification";
+      color:  50  50  50 255; }
 
 
    color_class { name: ":bg";

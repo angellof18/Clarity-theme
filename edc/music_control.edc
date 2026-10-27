@@ -57,6 +57,8 @@ group { name: "e/modules/music-control/popup";
    skip_namespace_validation: 1;
 #endif
    images.image: "grad-v-bi.png" COMP;
+   images.image: "win_rounded_top.png" COMP;
+   images.image: "win_rounded_bottom.png" COMP;
    min: 160 160;
    styles {
       style { name: "music_control_metadata_style";
@@ -153,9 +155,13 @@ group { name: "e/modules/music-control/popup";
             offscale;
          }
       }
-      part { name: "player_name_back"; type: RECT;
+      part { name: "player_name_back";
          scale: 1;
          description { state: "default" 0;
+	 image.normal: "win_rounded_top.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/gadgets/music_control/base";
             rel1.offset: -4 -4;
             rel2.offset: 3 3;
@@ -172,11 +178,16 @@ group { name: "e/modules/music-control/popup";
             rel2.to: "btn_back";
             rel2.relative: 1.0 0.0;
             image.normal: "grad-v-bi.png";
+	 visible: 0;
          }
       }
-      part { name: "btn_back"; type: RECT;
+      part { name: "btn_back";
          scale: 1;
          description { state: "default" 0;
+	 image.normal: "win_rounded_bottom.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/gadgets/music_control/base";
             rel1.to_y: "previous_btn";
             rel1.offset: -4 -4;

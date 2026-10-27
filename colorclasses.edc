@@ -642,10 +642,74 @@ color_classes {
 // example to make a custom color appear for that specific element or anything
 // sharing that specific cc.
 ///////////////////////////////////////////////////////////////////////////////
+   color_class { name: "/bg/normal/border";
+      color:  60  60  60 255; }
+   color_class { name: "/bg/normal/button";
+      color:  50  50  50 255; }
+   color_class { name: "/bg/normal/check/base";
+      color:  60  60  60 255; }
+   color_class { name: "/bg/normal/entry";
+      color:  50  50  50 255; }
+   color_class { name: "/bg/normal/entry/selection";
+      color:  78  141  216 255; }
+   color_class { name: "/bg/normal/everything/entry";
+      color:  50  50  50 255; }
+   color_class { name: "/bg/normal/everything/list/base";
+      color:  32  32  32 255; }
+   color_class { name: "/bg/normal/everything/selector";
+      color:  32  32  32 255; }
+   color_class { name: "/bg/normal/everything/tabs";
+      color:  32  32  32 255; }
+   color_class { name: "/bg/normal/fileman/desk/base";
+      color:  43  43  43 0; }
+   color_class { name: "/bg/normal/frame";
+      color:  50  50  50 255; }
+   color_class { name: "/bg/normal/frame/title";
+      color:  78  78  78 255; }
+   color_class { name: "/bg/normal/gadgets/clock/cal/day/date/today";
+      color:  78  141  216 255; }
+   color_class { name: "/bg/normal/gadgets/music_control/base";
+      color:  32  32  32 255; }
+   color_class { name: "/bg/normal/radio/base";
+      color:  60  60  60 255; }
+   color_class { name: "/bg/normal/titlebar";
+      color:  43  43  43 255; }
+   color_class { name: "/bg/pressed/button";
+      color:  88  88  88 255; }
+   color_class { name: "/bg/pressed/gadgets/tasks/base";
+      color:  58  58  58 0; }
+   color_class { name: "/bg/selected/comp/focusglow";
+      color:  255  255  255 0; }
+   color_class { name: "/bg/selected/everything/list/item";
+      color:  58  58  58 255; }
+   color_class { name: "/bg/selected/everything/selector/item";
+      color:  0  0  0 0; }
+   color_class { name: "/bg/selected/everything/tab/item";
+      color:  58  58  58 255; }
+   color_class { name: "/bg/selected/fileman/desk/base";
+      color:  58  58  58 48; }
+   color_class { name: "/bg/selected/gadgets/ibar/selection";
+      color:  60  60  60 0; }
+   color_class { name: "/bg/selected/gadgets/tasks/bar";
+      color:  60  60  60 0; }
+   color_class { name: "/bg/selected/grid/item";
+      color:  58  58  58 255; }
+   color_class { name: "/bg/selected/list/item";
+      color:  58  58  58 255; }
+   color_class { name: "/bg/selected/menu/item/base";
+      color:  58  58  58 255; }
+   color_class { name: "/bg/selected/titlebar";
+      color:  43  43  43 255; }
+   color_class { name: "/bg/selected/toolbar/bar";
+      color:  60  60  60 0; }
+   color_class { name: "/bg/selected/toolbar/base";
+      color:  58  58  58 255; }
+
+
    color_class { name: ":bg";
-      color:  64  64  64 255; }
+      color:  43  43  43 255; }
    color_class { name: ":bg-semi";
-      color:  64  64  64 182; }
+      color:  43  43  43 204; }
    color_class { name: ":bg-trans";
       color:  64  64  64 192; }
    color_class { name: ":bg-dimmest";
@@ -657,9 +721,9 @@ color_classes {
    color_class { name: ":bg-alt-light";
       color:  58  58  58 255; }
    color_class { name: ":bg-alt";
-      color:  56  56  56 255; }
+      color:  44  44  44 255; }
    color_class { name: ":bg-dim";
-      color:  48  48  48 255; }
+      color:  54  54  54 255; }
    color_class { name: ":bg-dark";
       color:  32  32  32 255; }
    color_class { name: ":bg-dark-invisible";
@@ -683,7 +747,7 @@ color_classes {
    color_class { name: ":fg-dim";
       color: 128 128 128 255; }
    color_class { name: ":fg";
-      color: 160 160 160 255; }
+      color: 205 205 205 255; }
    color_class { name: ":fg-prehigh";
       color: 192 192 192 255; }
    color_class { name: ":fg-high";
@@ -693,7 +757,7 @@ color_classes {
    color_class { name: ":fg-light";
       color: 255 255 255 255; }
    color_class { name: ":selected";
-      color:  51 153 255 255; }
+      color:  78 141 216 255; }
    color_class { name: ":selected-light";
       color:  51 153 255  25; }
    color_class { name: ":selected-medium";
@@ -753,9 +817,9 @@ color_classes {
    color_class { name: ":dim-dark";
       color:   0   0   0 200; }
    color_class { name: ":shadow";
-      color:   0   0   0 128; }
+      color:   0   0   0 32; }
    color_class { name: ":shadow-selected";
-      color:   0   0   0 255; }
+      color:   0   0   0 32; }
    color_class { name: ":shadow-disabled";
       color:   0   0   0  64; }
    color_class { name: ":outline";

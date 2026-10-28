@@ -643,159 +643,158 @@ color_classes {
 // sharing that specific cc.
 ///////////////////////////////////////////////////////////////////////////////
    color_class { name: "/bg/normal/border";
-      color:  60  60  60 255; }
-   color_class { name: "/bg/normal/button";
-      color:  50  50  50 255; }
-   color_class { name: "/bg/normal/check/base";
-      color:  60  60  60 255; }
-   color_class { name: "/bg/normal/entry";
-      color:  50  50  50 255; }
-   color_class { name: "/bg/normal/entry/selection";
-      color:  78  141  216 255; }
-   color_class { name: "/bg/normal/everything/entry";
-      color:  50  50  50 255; }
-   color_class { name: "/bg/normal/everything/list/base";
-      color:  32  32  32 230; }
-   color_class { name: "/bg/normal/everything/selector";
-      color:  32  32  32 230; }
-   color_class { name: "/bg/normal/everything/tabs";
-      color:  32  32  32 230; }
-   color_class { name: "/bg/normal/fileman/desk/base";
-      color:  43  43  43 0; }
-   color_class { name: "/bg/normal/frame";
-      color:  50  50  50 255; }
-   color_class { name: "/bg/normal/frame/title";
-      color:  78  78  78 255; }
-   color_class { name: "/bg/normal/gadgets/clock/cal/day/date/today";
-      color:  78  141  216 255; }
-   color_class { name: "/bg/normal/gadgets/music_control/base";
-      color:  32  32  32 255; }
-   color_class { name: "/bg/normal/radio/base";
-      color:  60  60  60 255; }
-   color_class { name: "/bg/normal/titlebar";
-      color:  43  43  43 255; }
-   color_class { name: "/bg/pressed/button";
-      color:  88  88  88 255; }
-   color_class { name: "/bg/pressed/gadgets/tasks/base";
-      color:  58  58  58 0; }
-   color_class { name: "/bg/selected/comp/focusglow";
-      color:  255  255  255 0; }
-   color_class { name: "/bg/selected/everything/list/item";
-      color:  58  58  58 255; }
-   color_class { name: "/bg/selected/everything/selector/item";
-      color:  0  0  0 0; }
-   color_class { name: "/bg/selected/everything/tab/item";
-      color:  58  58  58 255; }
-   color_class { name: "/bg/selected/fileman/desk/base";
-      color:  58  58  58 48; }
-   color_class { name: "/bg/selected/gadgets/ibar/selection";
-      color:  60  60  60 0; }
-   color_class { name: "/bg/selected/gadgets/tasks/bar";
-      color:  60  60  60 0; }
-   color_class { name: "/bg/selected/grid/item";
-      color:  58  58  58 255; }
-   color_class { name: "/bg/selected/list/item";
-      color:  58  58  58 255; }
-   color_class { name: "/bg/selected/menu/item/base";
-      color:  58  58  58 255; }
-   color_class { name: "/bg/selected/titlebar";
-      color:  43  43  43 255; }
-   color_class { name: "/bg/selected/toolbar/bar";
-      color:  60  60  60 0; }
-   color_class { name: "/bg/selected/toolbar/base";
-      color:  58  58  58 255; }
-   color_class { name: "/fg/normal/grid/item/fileman/desktop";
-      color:  192  192  192 255; }
+      color:  238  238  238 255; }
+   color_class { name: "/bg/normal/border/move";
+      color:  245  245  245 255; }
    color_class { name: "/bg/normal/border/resize";
-      color:  43  43  43 0; }
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/button";
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/entry";
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/entry/selection";
+      color:  55  132  222 255; }
+   color_class { name: "/bg/normal/everything/entry";
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/everything/list/base";
+      color:  253  253  253 242; }
+   color_class { name: "/bg/normal/everything/selector";
+      color:  253  253  253 242; }
+   color_class { name: "/bg/normal/everything/tabs";
+      color:  253  253  253 242; }
+   color_class { name: "/bg/normal/fileman/desk/base";
+      color:  215  215  215 0; }
+   color_class { name: "/bg/normal/frame";
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/frame/title";
+      color:  249  249  249 255; }
+   color_class { name: "/bg/normal/gadgets/music_control/base";
+      color:  215  215  215 255; }
    color_class { name: "/bg/normal/notification";
-      color:  50  50  50 255; }
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/popup/pager";
+      color:  245  245  245 255; }
+   color_class { name: "/bg/normal/radio/base";
+      color:  215  215  215 255; }
+   color_class { name: "/bg/normal/titlebar";
+      color:  238  238  238 255; }
+   color_class { name: "/bg/pressed/button";
+      color:  204  204  204 255; }
+   color_class { name: "/bg/selected/everything/list/item";
+      color:  215  215  215 255; }
+   color_class { name: "/bg/selected/everything/tab/item";
+      color:  215  215  215 255; }
+   color_class { name: "/bg/selected/fileman/desk/base";
+      color:  215  215  215 48; }
+   color_class { name: "/bg/selected/gadgets/tasks/bar";
+      color:  215  215  215 0; }
+   color_class { name: "/bg/selected/grid/item";
+      color:  215  215  215 255; }
+   color_class { name: "/bg/selected/list/item";
+      color:  215  215  215 255; }
+   color_class { name: "/bg/selected/menu/item/base";
+      color:  215  215  215 255; }
+   color_class { name: "/bg/selected/titlebar";
+      color:  255  255  255 255; }
+   color_class { name: "/bg/selected/toolbar/base";
+      color:  215  215  215 255; }
+   color_class { name: "/fg/disabled/button";
+      color:  162  162  162 255; }
+   color_class { name: "/fg/normal/gadgets/tasks/text/focused";
+      color:  0  0  0 255; }
+   color_class { name: "/fg/normal/grid/item/fileman/desktop";
+      color:  58  58  58 255; }
+   color_class { name: "/fg/normal/notification/text";
+      color:  58  58  58 255; }
+   color_class { name: "/fg/normal/text-heading";
+      color:  58  58  58 255; }
+
 
 
    color_class { name: ":bg";
-      color:  43  43  43 255; }
+      color:  255  255  255 255; }
    color_class { name: ":bg-semi";
-      color:  43  43  43 204; }
+      color:  255  255  255 204; }
    color_class { name: ":bg-trans";
-      color:  64  64  64 192; }
+      color:  216  216  216 192; }
    color_class { name: ":bg-dimmest";
-      color:  36  36  36 255; }
+      color:  104  104  104 255; }
    color_class { name: ":bg-dimmer";
-      color:  44  44  44 255; }
+      color:  112  112  112 255; }
    color_class { name: ":bg-alt-dark";
-      color:  54  54  54 255; }
+      color:  152  152  152 255; }
    color_class { name: ":bg-alt-light";
-      color:  58  58  58 255; }
+      color:  224  224  224 255; }
    color_class { name: ":bg-alt";
-      color:  44  44  44 255; }
+      color:  252  252  252 255; }
    color_class { name: ":bg-dim";
-      color:  54  54  54 255; }
+      color:  245  245  245 255; }
    color_class { name: ":bg-dark";
-      color:  32  32  32 255; }
+      color:  171  171  171 255; }
    color_class { name: ":bg-dark-invisible";
-      color:  32  32  32   0; }
+      color:  160  160  160   255; }
    color_class { name: ":bg-darkest";
-      color:  16  16  16 255; }
+      color:  173  173  173 255; }
    color_class { name: ":bg-dark-alt";
-      color:  28  28  28 255; }
+      color:  144  144  144 255; }
    color_class { name: ":bg-medium";
-      color:  72  72  72 255; }
+      color:  208  208  208 255; }
    color_class { name: ":bg-high";
-      color:  80  80  80 255; }
+      color:  184  184  184 255; }
    color_class { name: ":bg-higher";
-      color:  96  96  96 255; }
+      color:  240  240  240 255; }
    color_class { name: ":bg-highest";
       color: 112 112 112 255; }
    color_class { name: ":bg-light";
-      color: 192 192 192 255; }
-   color_class { name: ":bg-light-alt";
-      color: 184 184 184 255; }
-   color_class { name: ":fg-dim";
-      color: 128 128 128 255; }
-   color_class { name: ":fg";
-      color: 205 205 205 255; }
-   color_class { name: ":fg-prehigh";
-      color: 192 192 192 255; }
-   color_class { name: ":fg-high";
-      color: 200 200 200 255; }
-   color_class { name: ":fg-higher";
-      color: 220 220 220 255; }
-   color_class { name: ":fg-light";
       color: 255 255 255 255; }
+   color_class { name: ":bg-light-alt";
+      color: 232 232 232 255; }
+   color_class { name: ":fg-dim";
+      color: 187 187 187 255; }
+   color_class { name: ":fg";
+      color: 58 58 58 255; }
+   color_class { name: ":fg-prehigh";
+      color: 64 64 64 255; }
+   color_class { name: ":fg-high";
+      color: 67 67 67 255; }
+   color_class { name: ":fg-higher";
+      color: 48 48 48 255; }
+   color_class { name: ":fg-light";
+      color: 58 58 58 255; }
    color_class { name: ":selected";
-      color:  78 141 216 255; }
+      color:  55 132 222 255; }
    color_class { name: ":selected-light";
-      color:  51 153 255  25; }
+      color:  119 136 153  25; }
    color_class { name: ":selected-medium";
-      color:  51 153 255 128; }
+      color:  119 136 153 128; }
    color_class { name: ":selected-heavy";
-      color:  51 153 255 192; }
+      color:  119 136 153 192; }
    color_class { name: ":selected-alt";
-      color: 255 153  51 255; }
+      color: 239 175  110 255; }
    color_class { name: ":selected-alt-trans";
       color: 255 153  51  64; }
    color_class { name: ":selected-alt-dim";
-      color: 128  76  25 255; }
+      color: 231  182  134 255; }
    color_class { name: ":selected-dim";
-      color:  25  76 128 255; }
+      color:  166  176 186 255; }
    color_class { name: ":selected2";
-      color: 153 255  51 255; }
+      color: 179 232  127 255; }
    color_class { name: ":selected2-dim";
-      color:  76 128  25 255; }
+      color:  209 239  174 255; }
    color_class { name: ":selected3";
       color: 255  51 153 255; }
    color_class { name: ":selected4";
-      color: 255  51  51 255; }
+      color: 228  118  118 255; }
    color_class { name: ":selected4-dim";
-      color: 153  34  34 255; }
+      color: 229  140  140 255; }
    color_class { name: ":selected5";
-      color: 153  51 255 255; }
+      color: 119  0 238 255; }
    color_class { name: ":selected5-dim";
-      color:  76  25 127 255; }
+      color:  179  127 230 255; }
    color_class { name: ":selected6";
-      color:  51 255 153 255; }
+      color:  0 121 61 255; }
    color_class { name: ":selected6-dim";
-      color:  56 160  96 255; }
+      color:  104 202  142 255; }
    color_class { name: ":win-normal";
       color: 255 255 255 255; }
    color_class { name: ":win-selected";
@@ -813,15 +812,15 @@ color_classes {
    color_class { name: ":dim-invisible";
       color:   0   0   0   0; }
    color_class { name: ":dim-lightest";
-      color:   0   0   0  32; }
+      color:   0   0   0  12; }
    color_class { name: ":dim-lighter";
-      color:   0   0   0  64; }
+      color:   0   0   0  18; }
    color_class { name: ":dim-light";
-      color:   0   0   0  80; }
+      color:   0   0   0  44; }
    color_class { name: ":dim";
-      color:   0   0   0 160; }
+      color:   0   0   0 96; }
    color_class { name: ":dim-dark";
-      color:   0   0   0 200; }
+      color:   0   0   0 122; }
    color_class { name: ":shadow";
       color:   0   0   0 32; }
    color_class { name: ":shadow-selected";
@@ -835,37 +834,37 @@ color_classes {
    color_class { name: ":validate-pass";
       color:  32 255  16  80; }
    color_class { name: ":success";
-      color:  51 255  51 255; }
+      color:  0 169  0 255; }
    color_class { name: ":success-dim";
-      color:  51 153  51 255; }
+      color:  125 212  125 255; }
    color_class { name: ":keyword";
-      color: 255 153 153 255; }
+      color: 255 43 43 255; }
    color_class { name: ":keyword-dim";
-      color: 128  80  80 255; }
+      color: 194  157  157 255; }
    color_class { name: ":match";
-      color: 255 187  51 255; }
+      color: 227 174  68 255; }
    color_class { name: ":match-dim";
-      color: 128  96  25 255; }
+      color: 229  196  123 255; }
    color_class { name: ":comment";
       color:  51 153 153 255; }
    color_class { name: ":comment-dim";
-      color:  56  96  96 255; }
+      color:  165  202  202 255; }
    color_class { name: ":number";
-      color: 220 220  48 255; }
+      color: 153 153  26 255; }
    color_class { name: ":number-dim";
-      color: 128 128  56 255; }
+      color: 192 192  111 255; }
    color_class { name: ":class";
       color: 119 170 221 255; }
    color_class { name: ":class-dim";
-      color:  59  85 110 255; }
+      color:  169  189 209 255; }
    color_class { name: ":note";
       color: 160  80  17 255; }
    color_class { name: ":note-dim";
-      color:  80  40   8 255; }
+      color:  236  141   65 255; }
    color_class { name: ":todo";
       color:  40  80 160 255; }
    color_class { name: ":todo-dim";
-      color:  20  40  80 255; }
+      color:  134  164  225 255; }
 ///////////////////////////////////////////////////////////////////////////////
 // some specialty color classes wallpapers/backgrounds can optionally
 // use to match a color palette/scheme with advanced usage of these

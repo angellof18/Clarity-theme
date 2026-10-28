@@ -708,6 +708,20 @@ color_classes {
       color:  58  58  58 255; }
    color_class { name: "/fg/normal/text-heading";
       color:  58  58  58 255; }
+   color_class { name: "/bg/selected/everything/selector/item";
+      color:  0  0  0 0; }
+   color_class { name: "/bg/selected/gadgets/ibar/selection";
+      color:  0  0  0 0; }
+   color_class { name: "/fg/normal/tooltip/text";
+      color:  255  255  255 255; }
+   color_class { name: "/bg/selected/toolbar/bar";
+      color:  255  255  255 0; }
+   color_class { name: "/bg/pressed/gadgets/tasks/base";
+      color:  255  255  255 0; }
+   color_class { name: "/bg/normal/gadgets/clock/cal/day/date/today";
+      color:  78  141  216 255; }
+   color_class { name: "/fg/normal/gadgets/clock/cal/day/date/today";
+      color:  255  255  255 255; }
 
 
 

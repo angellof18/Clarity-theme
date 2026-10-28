@@ -703,7 +703,7 @@ color_classes {
    color_class { name: "/fg/normal/gadgets/tasks/text/focused";
       color:  0  0  0 255; }
    color_class { name: "/fg/normal/grid/item/fileman/desktop";
-      color:  58  58  58 255; }
+      color:  245  245  245 255; }
    color_class { name: "/fg/normal/notification/text";
       color:  58  58  58 255; }
    color_class { name: "/fg/normal/text-heading";
@@ -722,6 +722,8 @@ color_classes {
       color:  78  141  216 255; }
    color_class { name: "/fg/normal/gadgets/clock/cal/day/date/today";
       color:  255  255  255 255; }
+   color_class { name: "/bg/normal/fileman/overlay/typebuf/base";
+      color:  215  215  215 255; }
 
 
 

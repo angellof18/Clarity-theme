@@ -44,13 +44,28 @@ Asegúrate de contar con las bibliotecas básicas de desarrollo de Enlightenment
 
 2. Otorga permisos de ejecución al script de compilación (si aún no los tiene):
    ```bash
-   chmod +x .build
+   chmod +x build.sh
    ```
 
 3. Ejecuta el script de compilación `.build`:
    ```bash
-   ./build
+   ./build.sh
    ```
+
+## Variantes del Tema
+
+El tema está disponible en dos variantes: **Dark** (predeterminada en la rama `master`) y **Light**.
+
+> **Nota para la variante Light:**
+> Para cambiar a la versión clara después de clonar el repositorio:
+> ```bash
+> git checkout light
+> ```
+> O para clonar directamente solo la variante Light:
+> ```bash
+> git clone -b light --single-branch https://github.com/angellof18/Clarity-theme.git
+> ```
+
 
 ---
 

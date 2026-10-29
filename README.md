@@ -6,6 +6,10 @@
 
 ## 🎨 Vista Previa (Preview)
 
+<p align="center">
+  <img src="assets/preview.gif" alt="Demostración en video del tema Clarity" width="100%">
+</p>
+
 A continuación se muestran los módulos y gadgets diseñados para ambas variantes visuales:
 
 | Gadget | Dark | Light |

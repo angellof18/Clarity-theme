@@ -6,7 +6,11 @@
 
 ## 🎨 Vista Previa (Preview)
 
-[![Vista previa del video](https://img.youtube.com/vi/jmeLyTkE1G0/0.jpg)](https://www.youtube.com/watch?v=jmeLyTkE1G0)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=jmeLyTkE1G0">
+    <img src="https://img.youtube.com/vi/jmeLyTkE1G0/maxresdefault.jpg" alt="Clarity Theme Preview" width="100%" style="border-radius: 6px;">
+  </a>
+</p>
 
 A continuación se muestran los módulos y gadgets diseñados para ambas variantes visuales:
 

@@ -17,7 +17,7 @@ A continuación se muestran los módulos y gadgets diseñados para ambas variant
 | **Mezclador de Audio** | ![Mixer Dark](assets/Mixer_Dark.png) | ![Mixer Light](assets/Mixer_Light.png) |
 | **Control de Música** | ![Music Control Dark](assets/MusicControl_Dark.png) | ![Music Control Light](assets/MusicControl_Light.png) |
 | **Red (Network)** | ![Network Dark](assets/Network_Dark.png) | ![Network Light](assets/Network_Light.png) |
-| **Filemanager** | ![Filemanager Dark](assets/E_filemanager_Dark.jpg) | ![Filemanager Light](assets/E_filemanager_Light.jpg) |
+| **Filemanager** | ![Filemanager Dark](assets/E_filemanager_Dark.png) | ![Filemanager Light](assets/E_filemanager_Light.png) |
 | **Everything Launcher** | ![Everything Launcher Dark](assets/EverythingLauncher_Dark.png) | ![Everything Launcher Light](assets/EverythingLauncher_Light.png) |
 
 ---

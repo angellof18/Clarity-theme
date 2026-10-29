@@ -65,6 +65,17 @@ Una vez compilado el archivo `.edj` resultante:
 2. Ve al menú principal de **Enlightenment** > **Configuración** > **Tema**.
 3. Selecciona **Clarity** en la lista y presiona **Aplicar**.
 
+### Seleccionar una paleta vacía
+
+Clarity ya incluye los colores correspondientes a sus variantes **Dark** y **Light**, por lo que **no es necesario instalar ni aplicar las paletas `Clarity-dark.pal` o `Clarity-light.pal`**. Para evitar conflictos con los colores definidos por el tema, selecciona una paleta vacía:
+
+1. Después de aplicar **Clarity** en **Enlightenment > Configuración > Tema**, abre **Palette Editor**.
+2. Pulsa **Select palette**, selecciona **`Empty`** en la lista y pulsa **Select**, como se muestra en la imagen.
+
+![Palette Editor con la paleta Empty seleccionada](assets/Palette.png)
+
+Usar `Empty` evita que otra paleta de colores interfiera con los colores que Clarity ya define. No necesitas cargar ni configurar ninguna otra paleta.
+
 ---
 
 ## 🤝 Contribuciones
@@ -72,7 +83,3 @@ Una vez compilado el archivo `.edj` resultante:
 ¡Las sugerencias, correcciones de errores e *issues* son más que bienvenidos! Si encuentras algún detalle visual o quieres colaborar, siéntete libre de abrir un *pull request*.
 
 ---
-
-## 📄 Licencia
-
-Este proyecto se distribuye bajo la licencia **MIT**.

@@ -681,11 +681,11 @@ color_classes {
    color_class { name: "/bg/selected/comp/focusglow";
       color:  255  255  255 0; }
    color_class { name: "/bg/selected/everything/list/item";
-      color:  58  58  58 255; }
+      color:  84  84  84 255; }
    color_class { name: "/bg/selected/everything/selector/item";
       color:  0  0  0 0; }
    color_class { name: "/bg/selected/everything/tab/item";
-      color:  58  58  58 255; }
+      color:  84  84  84 255; }
    color_class { name: "/bg/selected/fileman/desk/base";
       color:  58  58  58 48; }
    color_class { name: "/bg/selected/gadgets/ibar/selection";
@@ -693,17 +693,17 @@ color_classes {
    color_class { name: "/bg/selected/gadgets/tasks/bar";
       color:  60  60  60 0; }
    color_class { name: "/bg/selected/grid/item";
-      color:  58  58  58 255; }
+      color:  84  84  84 255; }
    color_class { name: "/bg/selected/list/item";
-      color:  58  58  58 255; }
+      color:  84  84  84 255; }
    color_class { name: "/bg/selected/menu/item/base";
-      color:  58  58  58 255; }
+      color:  84  84  84 255; }
    color_class { name: "/bg/selected/titlebar";
       color:  43  43  43 255; }
    color_class { name: "/bg/selected/toolbar/bar";
       color:  60  60  60 0; }
    color_class { name: "/bg/selected/toolbar/base";
-      color:  58  58  58 255; }
+      color:  84  84  84 255; }
    color_class { name: "/fg/normal/grid/item/fileman/desktop";
       color:  192  192  192 255; }
    color_class { name: "/bg/normal/border/resize";

@@ -1,2 +1,2 @@
 #!/bin/sh
-edje_cc $@ -id . -fd . default.edc -o Clarity-Dark.edj
+edje_cc $@ -id src -fd src -sd src src/default.edc -o Clarity-Dark.edj

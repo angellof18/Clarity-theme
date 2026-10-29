@@ -32,8 +32,8 @@ Asegúrate de contar con las bibliotecas básicas de desarrollo de Enlightenment
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu-usuario/clarity-theme.git
-   cd clarity-theme
+   git clone https://github.com/angellof18/Clarity-theme.git
+   cd Clarity-theme
    ```
 
 2. Otorga permisos de ejecución al script de compilación (si aún no los tiene):
@@ -43,7 +43,7 @@ Asegúrate de contar con las bibliotecas básicas de desarrollo de Enlightenment
 
 3. Ejecuta el script de compilación `.build`:
    ```bash
-   ./.build
+   ./build
    ```
 
 ---
@@ -54,7 +54,7 @@ Una vez compilado el archivo `.edj` resultante:
 
 1. Copia el archivo `.edj` generado a tu directorio de temas de Enlightenment:
    ```bash
-   cp Clarity.edj ~/.e/e/themes/
+   cp Clarity-*.edj ~/.elementary/themes/
    ```
 2. Ve al menú principal de **Enlightenment** > **Configuración** > **Tema**.
 3. Selecciona **Clarity** en la lista y presiona **Aplicar**.

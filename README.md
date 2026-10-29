@@ -6,9 +6,7 @@
 
 ## 🎨 Vista Previa (Preview)
 
-<p align="center">
-  <img src="assets/preview.gif" alt="Demostración en video del tema Clarity" width="100%">
-</p>
+[![Vista previa del video](https://img.youtube.com/vi/jmeLyTkE1G0/0.jpg)](https://www.youtube.com/watch?v=jmeLyTkE1G0)
 
 A continuación se muestran los módulos y gadgets diseñados para ambas variantes visuales:
 

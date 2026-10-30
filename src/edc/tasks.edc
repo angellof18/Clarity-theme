@@ -29,8 +29,8 @@ group { name:"e/modules/tasks/item";
             image.middle: SOLID;
             fill.smooth: 0;
             color_class: "/bg/normal/gadgets/tasks/base/normal";
-            rel1.offset: 0 4;
-	 rel2.offset: -1 -5;
+            rel1.offset: 2 4;
+	 rel2.offset: -3 -5;
             offscale;
          }
          description { state: "iconic" 0.0;
@@ -456,8 +456,8 @@ group { name:"e/modules/tasks/item_vert";
             image.border: 12 12 12 12;
             image.middle: SOLID;
             fill.smooth: 0;
-	 rel1.offset: 4 0;
-	 rel2.offset: -5 -1;
+	 rel1.offset: 4 2;
+	 rel2.offset: -5 -3;
          }
          description { state: "iconic" 0.0;
             inherit: "default" 0.0;

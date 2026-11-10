@@ -70,6 +70,9 @@ I160("temp_high", "temperature-high")
 //Registro de iconos de control de música en ic.edc
 I160("music_control", "music-control")
 
+//Registro de iconos de Clipboard en ic.edc
+I160("i-clipboard", "clipboard")
+
 //Others
 I160("i-maximize", "maximize")
 I160("i-minimize", "minimize")

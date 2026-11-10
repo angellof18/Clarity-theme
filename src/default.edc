@@ -152,6 +152,7 @@ collections {
 #include "edc/tiling.edc"
 #include "edc/procstats.edc"
 #include "edc/clipboard.edc"
+#include "edc/forecasts.edc"
 
 // icons
 #include "edc/icons.edc"

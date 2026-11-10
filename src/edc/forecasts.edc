@@ -1,0 +1,508 @@
+#define ORIENT_TARGETS \
+               target: "day0"; \
+               target: "day1"; \
+               target: "icon"; \
+               target: "e.text.location"; \
+               target: "e.text.local_time"; \
+               target: "e.text.temp"; \
+               target: "e.text.description"; \
+               target: "e.swallow.day0.icon"; \
+               target: "e.text.day0.date"; \
+               target: "e.text.day0.description"; \
+               target: "e.text.day0.low"; \
+               target: "e.text.day0.high"; \
+               target: "e.swallow.day1.icon"; \
+               target: "e.text.day1.date"; \
+               target: "e.text.day1.description"; \
+               target: "e.text.day1.low"; \
+               target: "e.text.day1.high"; \
+
+#define FORECASTS_ICON(icon_code, minw, minh, maxw, maxh, a) \
+group { name: "modules/forecasts/icons/"icon_code; \
+   images.image: "weather/"icon_code".png" COMP; \
+   min: minw minh; max: maxw maxh; \
+   parts { part { name: "icon"; \
+      description { state: "default" 0.0; \
+         aspect: a a; aspect_preference: BOTH; \
+         image.normal: "weather/"icon_code".png"; \
+         fill.smooth: 1; \
+      } } } }
+
+   group { name: "modules/forecasts/main";
+       min: 16 16;
+       script {
+           public is_float;
+       }
+       parts {
+           part { name: "base"; type: RECT;
+             scale: 1;
+               description { state: "default" 0.0;
+                min: 16 16;
+                   color: 0 0 0 0;
+               }
+           }
+           part { name: "icon"; type: SWALLOW; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                min: 16 16;
+                   rel1.relative: (15/160) (15/160);
+                   rel2.relative: (145/160) (145/160);
+                   aspect: 1.0 1.0; 
+                   aspect_preference: BOTH;
+               }
+               description { state: "float" 0.0;
+                   inherit: "default" 0.0;
+                   aspect: 1.0 1.0;
+                   rel2 {
+                       relative: 0.6 1.0;
+                       offset: 2 2;
+                   }
+                  offscale;
+               }
+           }
+           part { name: "e.text.temp"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   rel1.to: "icon";
+                   color_class: "/fg/normal/gadgets/forecasts/temperature";
+                   text { font: "Sans:style=Bold"; size: 10;
+                       min:   1 1;
+                       align: 0.0 0.1;
+                       ellipsis: -1.0;
+                       text_class: "module_large";
+                   }
+                  offscale;
+               }
+               description { state: "float" 0.0;
+                   inherit: "default" 0.0;
+                   rel1 {
+                       relative: 0.0 1.0;
+                       offset: 2 -20;
+                   }
+                   rel2.offset: -2 -2;
+                   text.align: 0.5 1.0;
+               }
+           }
+           part { name: "e.text.description"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   rel1 {
+                       relative: 0.0 1.0;
+                       offset:   2  2;
+                       to_x:     "icon";
+                   }
+                   rel2.offset:   -3  -3;
+                   color_class: "/fg/normal/gadgets/forecasts/description";
+                   text { font: "Sans:style=Bold"; size: 10;
+                       min:   1 1;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                  offscale;
+               }
+               description { state: "hidden" 0.0;
+                   inherit: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   inherit: "default" 0.0;
+                   rel.to: "e.text.temp";
+                   rel1.relative: 0.0 0.0;
+                   rel1.offset: 2 -14;
+                   rel2.relative: 1.0 0.0;
+               }
+           }
+           part { name: "e.text.location"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel1.relative: 0.0 0.2;
+                   rel1.offset:   2  2;
+                   color_class: "/fg/normal/gadgets/forecasts/location";
+                   text { font:  "Sans:style=Bold"; size: 10;
+                       text:  "Location";
+                       min:   1 1;
+                       align: 0.0 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+           part { name: "e.text.local_time"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel1 {
+                       relative: 0.0 0.34;
+                       offset:   2  2;
+                   }
+                   rel2 {
+                       relative: 0.6 0.50;
+                       offset:   -2  -2;
+                   }
+                   color_class: "/fg/normal/gadgets/forecasts/location";
+                   text { font:  "Sans:style=Bold"; size: 10;
+                       text:  "00:00";
+                       min:   1 1;
+                       align: 0.0 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+           part { name: "day0"; type: RECT;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   color: 0 0 0 0;
+                   rel1.relative: 0.6 0.0;
+                   rel1.offset: 2 2;
+                   rel2.relative: 1.0 0.5;
+                   rel2.offset: -3 -3;
+                   offscale;
+               }
+           }
+           part { name: "e.swallow.day0.icon"; type: SWALLOW; mouse_events: 0;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day0";
+               }
+           }
+           part { name: "e.text.day0.date"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day0";
+                   rel1.offset: 1 1;
+                   rel2.offset: -2 -2;
+                   color_class: "/fg/normal/gadgets/forecasts/day/date";
+                   text { font: "Sans:style=Bold"; size: 9;
+                       text:  "Date0";
+                       min:   1 1;
+                       align: 0.5 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                  offscale;
+               }
+           }
+           part { name: "e.text.day0.description"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel1 {
+                       offset: 2 -14;
+                       to_x: "day0";
+                       to_y: "e.text.day0.low";
+                   }
+                   rel2 {
+                       relative: 1.0 0.0;
+                       offset: -2 -2;
+                       to_x: "day0";
+                       to_y: "e.text.day0.low";
+                   }
+                   color_class: "/fg/normal/gadgets/forecasts/day/description";
+                   text { font: "Sans:style=Bold"; size: 10;
+                       text: "Description0";
+                       min: 1 1;
+                       align: 0.5 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                  offscale;
+               }
+           }
+           part { name: "e.text.day0.low"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day0";
+                   rel1.relative: 0.0 1.0;
+                   rel1.offset: 2 -14;
+                   color_class: "/fg/normal/gadgets/forecasts/day/low";
+                   text { font: "Sans:style=Bold"; size: 9;
+                       text:  "Low0";
+                       min:   1 1;
+                       align: 0.0 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+           part { name: "e.text.day0.high"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day0";
+                   rel1.relative: 0.0 1.0;
+                   rel1.offset: 2 -14;
+                   color_class: "/fg/normal/gadgets/forecasts/day/high";
+                   text { font: "Sans:style=Bold"; size: 9;
+                       text:  "High0";
+                       min:   1 1;
+                       align: 1.0 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+
+           part { name: "day1"; type: RECT;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   color: 0 0 0 0;
+                   rel1.relative: 0.6 0.5;
+                   rel1.offset: 4 4;
+                   offscale;
+               }
+           }
+           part { name: "e.swallow.day1.icon"; type: SWALLOW; mouse_events: 0;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel1.to: "day1";
+               }
+           }
+           part { name: "e.text.day1.date"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day1";
+                   rel1.offset: 1 1;
+                   rel2.offset: -2 -2;
+                   color_class: "/fg/normal/gadgets/forecasts/day/date";
+                   text { font: "Sans:style=Bold"; size: 9;
+                       text:  "Date1";
+                       min:   1 1;
+                       align: 0.5 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+           part { name: "e.text.day1.description"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel1 {
+                       offset:   2  -14;
+                       to_x: "day1";
+                       to_y: "e.text.day1.low";
+                   }
+                   rel2 {
+                       relative: 1.0 0.0;
+                       offset:   -2  -2;
+                       to_x: "day1";
+                       to_y: "e.text.day1.low";
+                   }
+                   color_class: "/fg/normal/gadgets/forecasts/day/description";
+                   text { font: "Sans:style=Bold"; size: 10;
+                       text:  "Description1";
+                       min:   1 1;
+                       align: 0.5 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+           part { name: "e.text.day1.low"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day1";
+                   rel1.relative: 0.0 1.0;
+                   rel1.offset: 2 -14;
+                   color_class: "/fg/normal/gadgets/forecasts/day/low";
+                   text { font: "Sans:style=Bold"; size: 9;
+                       text:  "Low1";
+                       min:   1 1;
+                       align: 0.0 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+           part { name: "e.text.day1.high"; type: TEXT; mouse_events: 0;
+               scale: 1;
+               description { state: "default" 0.0;
+                   visible: 0;
+               }
+               description { state: "float" 0.0;
+                   visible: 1;
+                   rel.to: "day1";
+                   rel1.relative: 0.0 1.0;
+                   rel1.offset: 2 -14;
+                   color_class: "/fg/normal/gadgets/forecasts/day/high";
+                   text { font: "Sans:style=Bold"; size: 9;
+                       text:  "High1";
+                       min:   1 1;
+                       align: 1.0 0.0;
+                       ellipsis: -1.0;
+                       text_class: "module_normal";
+                   }
+                   offscale;
+               }
+           }
+       }
+       programs {
+           program { signal: "e,state,description,hide"; source: "e";
+               action: STATE_SET "hidden" 0.0;
+               target: "e.text.description";
+           }
+           program { signal: "e,state,description,show"; source: "e";
+               action: STATE_SET "default" 0.0;
+               target: "e.text.description";
+           }
+           program { signal: "e,state,orientation,float"; source: "e";
+               script {
+                   set_int(is_float, 1);
+                   run_program(PROGRAM:"float_complete");
+               }
+           }
+           program { name: "float_complete";
+               action: STATE_SET "float" 0.0;
+               ORIENT_TARGETS
+           }
+           program { signal: "e,state,orientation,default"; source: "e";
+               script {
+                   set_int(is_float, 0);
+                   run_program(PROGRAM:"shelf_complete");
+               }
+           }
+           program { name: "shelf_complete";
+               action: STATE_SET "default" 0.0;
+               ORIENT_TARGETS
+           }
+       }
+   }
+
+   FORECASTS_ICON("rainshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsleetshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("fair_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rainandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightssnowshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleet", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rainshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rainshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("clearsky_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("partlycloudy_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snow", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightssnowshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsnowshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rainshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("fair_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsnowshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsnowandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsleetandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightssnowshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightssleetshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsleetshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rainshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightssleetshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("clearsky_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrainshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("fair_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightssleetshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsnow", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainandthunder", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrainshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsleet", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsleetshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("snowshowers_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavyrain", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rainshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleet", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnowshowersandthunder_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("cloudy", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightsnowshowers_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysleetshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("heavysnow", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetshowersandthunder_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("lightrain", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetshowersandthunder_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("sleetshowers_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("clearsky_polartwilight", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("rain", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("partlycloudy_day", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("partlycloudy_night", 10, 10, 110, 110, 1.0);
+   FORECASTS_ICON("fog", 10, 10, 110, 110, 1.0);
+

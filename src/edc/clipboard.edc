@@ -1,0 +1,17 @@
+group { name: "e/modules/clipboard/main";
+   min: 16 16;
+   max: 128 128;
+   parts {
+      part { name: "base";
+         description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: (15/160) (15/160);
+            rel2.relative: (145/160) (145/160);
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            image.normal: "i-clipboard";
+	 color_class: ":fg";
+         }
+      }
+   }
+}
+

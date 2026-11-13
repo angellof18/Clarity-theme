@@ -710,6 +710,12 @@ color_classes {
       color:  43  43  43 0; }
    color_class { name: "/bg/normal/notification";
       color:  50  50  50 255; }
+   color_class { name: "/fg/normal/gadgets/forecasts/temperature";
+      color:  78  141  216 0; }
+  color_class { name: "/fg/normal/gadgets/tasks/text/iconified";
+      color:  249  249  249 255; }
+  color_class { name: "/fg/normal/gadgets/tasks/text/normal";
+      color:  249  249  249 255; }
 
 
    color_class { name: ":bg";
@@ -825,7 +831,7 @@ color_classes {
    color_class { name: ":shadow";
       color:   0   0   0 32; }
    color_class { name: ":shadow-selected";
-      color:   0   0   0 32; }
+      color:   255   255   255 25; }
    color_class { name: ":shadow-disabled";
       color:   0   0   0  64; }
    color_class { name: ":outline";

@@ -1,34 +1,43 @@
 #!/bin/sh
 
-
-# Valores por defecto (Dark)
-OUTPUT="Clarity-Dark.edj"
+# Valores por defecto (Dark y default_shelf)
+BASE_NAME="Clarity-Dark"
 COLOR_SOURCE="src/variants/colorclasses_dark.edc"
 WALLPAPER="src/variants/wallpaper_dark.png"
+SHELF_SOURCE="src/variants/default_shelf.edc"
+ROUNDED_SUFFIX=""
 
 # Parsear argumentos
 for arg in "$@"; do
     case "$arg" in
         -light|--light)
-            OUTPUT="Clarity-Light.edj"
+            BASE_NAME="Clarity-Light"
             COLOR_SOURCE="src/variants/colorclasses_light.edc"
-	    WALLPAPER="src/variants/wallpaper_light.png"
+	        WALLPAPER="src/variants/wallpaper_light.png"
             shift
             ;;
         -dark|--dark)
-            OUTPUT="Clarity-Dark.edj"
+            BASE_NAME="Clarity-Dark"
             COLOR_SOURCE="src/variants/colorclasses_dark.edc"
-    	WALLPAPER="src/variants/wallpaper_dark.png"
+    	    WALLPAPER="src/variants/wallpaper_dark.png"
             shift
             ;;
         -black|--black)
-            OUTPUT="Clarity-Black.edj"
+            BASE_NAME="Clarity-Black"
             COLOR_SOURCE="src/variants/colorclasses_black.edc"
-    	WALLPAPER="src/variants/wallpaper_black.png"
+    	    WALLPAPER="src/variants/wallpaper_black.png"
+            shift
+            ;;
+        -rounded|--rounded)
+            SHELF_SOURCE="src/variants/rounded_shelf.edc"
+            ROUNDED_SUFFIX="-Rounded"
             shift
             ;;
     esac
 done
+
+# Construir el nombre final del archivo combinando el tema y el sufijo opcional
+OUTPUT="${BASE_NAME}${ROUNDED_SUFFIX}.edj"
 
 # Copiar el archivo de colorclasses correspondiente al destino esperado por default.edc
 if [ -f "$COLOR_SOURCE" ]; then
@@ -39,7 +48,16 @@ else
     exit 1
 fi
 
+# Copiar el shelf correspondiente (por defecto o redondeado)
+if [ -f "$SHELF_SOURCE" ]; then
+    cp "$SHELF_SOURCE" src/edc/shelf.edc
+    echo "Usando shelf: $SHELF_SOURCE"
+else
+    echo "Error: No se encuentra el archivo de shelf $SHELF_SOURCE"
+    exit 1
+fi
+
 # Compilar el tema
-edje_cc "$@" -id src -fd src -sd src src/default.edc -o "$OUTPUT"
+edje_cc -id src -fd src -sd src src/default.edc -o "$OUTPUT"
 
 echo "¡Tema compilado con éxito: $OUTPUT!"

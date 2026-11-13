@@ -716,6 +716,11 @@ color_classes {
       color:  249  249  249 255; }
   color_class { name: "/fg/normal/gadgets/tasks/text/normal";
       color:  249  249  249 255; }
+  color_class { name: "/bg/normal/gadgets/tasks/base/iconified";
+      color:  32  32  32 255; }
+  color_class { name: "/bg/normal/gadgets/tasks/base/focused";
+      color:  15  15  15 255; }
+
 
 
    color_class { name: ":bg";

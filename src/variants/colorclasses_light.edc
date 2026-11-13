@@ -647,13 +647,13 @@ color_classes {
    color_class { name: "/bg/normal/border/move";
       color:  245  245  245 255; }
    color_class { name: "/bg/normal/border/resize";
-      color:  245  245  245 255; }
+      color:  245  245  245 0; }
    color_class { name: "/bg/normal/button";
       color:  245  245  245 255; }
    color_class { name: "/bg/normal/entry";
       color:  245  245  245 255; }
    color_class { name: "/bg/normal/entry/selection";
-      color:  55  132  222 255; }
+      color:  78  141  216 255; }
    color_class { name: "/bg/normal/everything/entry";
       color:  245  245  245 255; }
    color_class { name: "/bg/normal/everything/list/base";
@@ -685,7 +685,7 @@ color_classes {
    color_class { name: "/bg/selected/everything/tab/item";
       color:  215  215  215 255; }
    color_class { name: "/bg/selected/fileman/desk/base";
-      color:  215  215  215 48; }
+      color:  255  255  255 25; }
    color_class { name: "/bg/selected/gadgets/tasks/bar";
       color:  215  215  215 0; }
    color_class { name: "/bg/selected/grid/item";
@@ -713,7 +713,7 @@ color_classes {
    color_class { name: "/bg/selected/gadgets/ibar/selection";
       color:  0  0  0 0; }
    color_class { name: "/fg/normal/tooltip/text";
-      color:  255  255  255 255; }
+      color:  0  0  0 255; }
    color_class { name: "/bg/selected/toolbar/bar";
       color:  255  255  255 0; }
    color_class { name: "/bg/pressed/gadgets/tasks/base";
@@ -724,8 +724,16 @@ color_classes {
       color:  255  255  255 255; }
    color_class { name: "/bg/normal/fileman/overlay/typebuf/base";
       color:  215  215  215 255; }
-
-
+  color_class { name: "/fg/normal/gadgets/forecasts/temperature";
+      color:  78  141  216 0; }
+  color_class { name: "/fg/normal/gadgets/tasks/text/iconified";
+      color:  0  0  0 255; }
+  color_class { name: "/fg/normal/gadgets/tasks/text/normal";
+      color:  0  0  0 255; }
+  color_class { name: "/dim/normal/button-overlay";
+      color:  255  255  255 255; }
+  color_class { name: "/dim/normal/tooltip";
+      color:  216  216  227 255; }
 
    color_class { name: ":bg";
       color:  255  255  255 255; }

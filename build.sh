@@ -2,35 +2,40 @@
 
 # Valores por defecto (Dark y default_shelf)
 BASE_NAME="Clarity-Dark"
-COLOR_SOURCE="src/variants/colorclasses_dark.edc"
-WALLPAPER="src/variants/wallpaper_dark.png"
-SHELF_SOURCE="src/variants/default_shelf.edc"
+COLOR_SOURCE="src/variants/colorclasses/colorclasses_dark.edc"
+WALLPAPER="src/variants//wallpaper/wallpaper_dark.png"
+SHELF_SOURCE="src/variants/shelf/default_shelf.edc"
 ROUNDED_SUFFIX=""
 
 # Parsear argumentos
 for arg in "$@"; do
     case "$arg" in
-        -light|--light)
+        -l|-light)
             BASE_NAME="Clarity-Light"
-            COLOR_SOURCE="src/variants/colorclasses_light.edc"
-	        WALLPAPER="src/variants/wallpaper_light.png"
+            COLOR_SOURCE="src/variants/colorclasses/colorclasses_light.edc"
+	        WALLPAPER="src/variants/wallpaper/wallpaper_light.png"
             shift
             ;;
-        -dark|--dark)
+        -d|-dark)
             BASE_NAME="Clarity-Dark"
-            COLOR_SOURCE="src/variants/colorclasses_dark.edc"
-    	    WALLPAPER="src/variants/wallpaper_dark.png"
+            COLOR_SOURCE="src/variants/colorclasses/colorclasses_dark.edc"
+    	    WALLPAPER="src/variants/wallpaper/wallpaper_dark.png"
             shift
             ;;
-        -black|--black)
+        -b|-black)
             BASE_NAME="Clarity-Black"
-            COLOR_SOURCE="src/variants/colorclasses_black.edc"
-    	    WALLPAPER="src/variants/wallpaper_black.png"
+            COLOR_SOURCE="src/variants/colorclasses/colorclasses_black.edc"
+    	    WALLPAPER="src/variants/wallpaper/wallpaper_black.png"
             shift
             ;;
-        -rounded|--rounded)
-            SHELF_SOURCE="src/variants/rounded_shelf.edc"
+        -r|-rounded)
+            SHELF_SOURCE="src/variants/shelf/rounded_shelf.edc"
             ROUNDED_SUFFIX="-Rounded"
+            shift
+            ;;
+        -w|-wallpapers)
+            cp backgrounds/wallpaper-*.jpg ~/.e/e/backgrounds
+	 echo "Copying wallpapers on ~/.e/e/backgrounds"
             shift
             ;;
     esac

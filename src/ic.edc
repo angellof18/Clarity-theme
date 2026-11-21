@@ -95,6 +95,9 @@ I160("i-efm-torrent", "efm-torrent")
 I160("i-efm-rpm", "efm-rpm")
 I160("i-efm-theme", "efm-theme")
 I160("i-efm-flatpak", "efm-flatpak")
+I160("i-efm-certificate", "efm-certificate")
+I160("i-efm-pgp", "efm-pgp")
+I160("i-efm-keepass", "efm-keepass")
 
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -277,6 +277,12 @@ ICON("sendto", "i-sendto")
       } \
    }
 /////////////////////////////////////////////////////////////
+ICON("application/pkix-cert", "i-efm-certificate")
+ICON("application/pgp-keys", "i-efm-pgp")
+ICON("application/x-keepass2", "i-efm-keepass")
+ICON("application/octet-stream", "i-efm-code")
+
+
 ICON("application/vnd.flatpak.ref", "i-efm-flatpak")
 ICON("application/x-ms-ne-executable", "i-efm-exe")
 
@@ -318,7 +324,7 @@ ICON("application/x-iso9660-image", "i-drive-cd")
 ICON("application/x-raw-disk-image", "i-drive-cd")
 ICON("application/x-cue", "i-drive-cd")
 
-ICON("application/octet-stream", "i-file2")
+#ICON("application/octet-stream", "i-file2")
 
 ICON("application/x-trash", "i-efm-trash")
 

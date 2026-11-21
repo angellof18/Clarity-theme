@@ -4,7 +4,12 @@ group { name: "e/gadman/popup";
    images.image: "win_rounded.png" COMP;
    parts {
       part { name: "bg"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
+            // Sin margen arriba ni a los lados (0), solo 10px de separación abajo (-11)
+            rel1.offset: 0 0;
+            rel2.offset: -1 -11;
+            offscale;
             image.normal: "win_rounded.png";
             image.border: 8 8 8 8;
             image.middle: SOLID;
@@ -15,13 +20,17 @@ group { name: "e/gadman/popup";
       part { name: "e.swallow.content"; type: SWALLOW; clip_to: "clip";
          scale: 1;
          description { state: "default" 0.0;
+            rel1.to: "bg";
             rel1.offset: 4 4;
+            rel2.to: "bg";
             rel2.offset: -5 -5;
             offscale;
          }
       }
       part { name: "clip"; type: RECT;
          description { state: "default";
+            rel1.to: "bg";
+            rel2.to: "bg";
          }
       }
    }

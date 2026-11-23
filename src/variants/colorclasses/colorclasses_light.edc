@@ -700,8 +700,6 @@ color_classes {
       color:  215  215  215 255; }
    color_class { name: "/fg/disabled/button";
       color:  162  162  162 255; }
-   color_class { name: "/fg/normal/gadgets/tasks/text/focused";
-      color:  0  0  0 255; }
    color_class { name: "/fg/normal/grid/item/fileman/desktop";
       color:  245  245  245 255; }
    color_class { name: "/fg/normal/notification/text";
@@ -746,8 +744,6 @@ color_classes {
   color_class { name: "/fg/normal/separator";
       color:  0  0  0 25; }
   color_class { name: "/fg/normal/gadgets/tasks/text/focused";
-      color:  255  255  255 255; }
-  color_class { name: "/fg/pressed/gadgets/tasks/text/focused";
       color:  255  255  255 255; }
 
    color_class { name: ":bg";

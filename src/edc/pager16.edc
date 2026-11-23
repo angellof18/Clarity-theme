@@ -119,19 +119,45 @@ group { name: "e/modules/pager16/base";
 }
 
 group { name: "e/modules/pager16/desk";
+   images.image: "win_rounded_small.png" COMP;
    images.image: "mini_blue_glow_arrow_0.png" COMP;
    images.image: "mini_blue_glow_arrow_1.png" COMP;
    images.image: "mini_blue_glow_arrow_2.png" COMP;
    images.image: "mini_blue_glow_arrow_3.png" COMP;
    parts {
-      part { name: "base"; type: RECT;
+      /* Botón redondeado con margen respecto al panel.
+         Usa win_rounded_small.png (esquinas de 5 px): no se deforma
+         aunque el botón sea bajo, como en el panel vertical.
+         Normal: "/bg/normal/gadgets/pager/desk" (hay que definirlo en colors.edc)
+         Activo: "/bg/selected/gadgets/pager/desk" (ya existía) */
+      part { name: "base";
+         scale: 1;
          description { state: "default" 0.0;
-            color: 0 0 0 0; // no cc
+            image.normal: "win_rounded_small.png";
+            image.border: 5 5 5 5;
+            image.middle: SOLID;
+            fill.smooth: 0;
+	 rel1.relative: 0.125 0.125;
+            rel2.relative: 0.875 0.875;
+            color_class: "/bg/normal/gadgets/pager/desk";
+            offscale;
+         }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color_class: "/bg/selected/gadgets/pager/desk";
          }
       }
       part { name: "clip"; type: RECT; mouse_events: 0;
          desc { "default";
-            rel.to: "e.swallow.content";
+            rel.to: "base";
+         }
+      }
+      /* Clip aparte para la vista previa del escritorio: invisible,
+         así queda un botón liso. Pon visible: 1 para volver a verla. */
+      part { name: "clip_content"; type: RECT; mouse_events: 0;
+         desc { "default";
+            rel.to: "base";
+            visible: 0;
          }
       }
       part { name: "e.swallow.drop"; type: SWALLOW;
@@ -145,7 +171,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "e.swallow.content"; type: SWALLOW;
-         clip_to: "clip";
+         clip_to: "clip_content";
          desc { "default";
             rel.to: "base";
             link.base: "e,state,visible" "e";
@@ -154,10 +180,12 @@ group { name: "e/modules/pager16/desk";
             link.base: "e,state,hidden" "e";
          }
       }
+      /* Etiqueta centrada en el botón (comportamiento original:
+         oculta por defecto, se activa con e,name,show / e,name,hide) */
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
          scale: 1;
          desc { "default";
-            rel.to: "e.swallow.content";
+            rel.to: "base";
             color_class: "/fg/normal/gadgets/pager/desk/text";
             text { font: FN; size: 10;
                text_class: "module_small";
@@ -166,23 +194,6 @@ group { name: "e/modules/pager16/desk";
             visible: 0;
          }
          desc { "active"; inherit;
-            visible: 1;
-         }
-      }
-      part { name: "sel"; type: RECT; mouse_events: 0;
-         scale: 1;
-         clip_to: "clip";
-         desc { "default";
-            color_class: "/bg/selected/gadgets/pager/desk";
-            visible: 0;
-            rel.to: "e.swallow.content";
-            rel1.relative: 0.0 1.0;
-            align: 0.5 1.0;
-            max: 99999 5;
-         }
-         desc { "active"; inherit;
-            inherit: "default" 0.0;
-            rel1.relative: 0.0 0.5;
             visible: 1;
          }
       }
@@ -310,7 +321,7 @@ group { name: "e/modules/pager16/desk";
          signal: "e,state,selected"; source: "e";
          action: STATE_SET "active" 0.0;
          transition: DECELERATE 0.2 USE_DURATION_FACTOR 1;
-         target: "sel";
+         target: "base";
       }
       program { signal: "e,state,unselected"; source: "e";
          action: ACTION_STOP;
@@ -319,7 +330,7 @@ group { name: "e/modules/pager16/desk";
       program { signal: "e,state,unselected"; source: "e";
          action: STATE_SET "default" 0.0;
          transition: DECELERATE 0.2 USE_DURATION_FACTOR 1;
-         target: "sel";
+         target: "base";
       }
       program { name: "drop1";
          signal: "e,action,drag,in"; source: "e";

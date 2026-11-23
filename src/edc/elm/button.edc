@@ -31,8 +31,8 @@ group { name: "elm/button/base/default";
             image.border: 12 12 12 12;
             image.middle: SOLID;
             fill.smooth: 0;
-  	rel1.offset: 2 0;
-  	rel2.offset: -3 -1;
+  	rel1.offset: 2 2;
+  	rel2.offset: -3 -3;
   	offscale;
          }
          desc { "pressed"; inherit;

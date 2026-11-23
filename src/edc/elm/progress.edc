@@ -1,4 +1,5 @@
 group { name: "elm/progressbar/horizontal/default";
+   images.image: "win_rounded_small.png" COMP;
 #define ICON    1
 #define LABEL   2
 #define DISABLE 4
@@ -123,22 +124,26 @@ group { name: "elm/progressbar/horizontal/default";
             color_class: "/fg/disabled/progress/text";
          }
       }
-      part { name: "bg"; type: RECT;
-         scale: 1;
-         description { state: "default" 0.0;
-            min: 16 16;
-            max: -1 16;
-            rel1.offset: 4 4;
-            rel2.offset: -5 -5;
-            color_class: "/bg/normal/progress/base";
-            offscale;
-         }
-         description { state: "iclabel" 0.0;
-            inherit: "default" 0.0;
-            rel1.to_x: "elm.text";
-            rel1.relative: 1.0 0.0;
-         }
-      }
+  part { name: "bg";
+   scale: 1;
+   description { state: "default" 0.0;
+      image.normal: "win_rounded_small.png";
+      image.border: 5 5 5 5;
+      image.middle: SOLID;
+      fill.smooth: 0;
+      min: 16 16;
+      max: -1 16;
+      rel1.offset: 4 4;
+      rel2.offset: -5 -5;
+      color_class: "/bg/normal/progress/base";
+      offscale;
+   }
+   description { state: "iclabel" 0.0;
+      inherit: "default" 0.0;
+      rel1.to_x: "elm.text";
+      rel1.relative: 1.0 0.0;
+   }
+}
       part { name: "elm.swallow.bar"; type: SWALLOW; mouse_events: 0;
          description { state: "default" 0.0;
             rel.to: "bg";
@@ -168,38 +173,46 @@ group { name: "elm/progressbar/horizontal/default";
             align: 0.0 0.5;
          }
       }
-      part { name: "bar"; type: RECT;
-         scale: 1;
-         clip_to: "fract_clip";
-         description { state: "default" 0.0;
-            rel1.to: "bg";
-            rel2.to_x: "barend";
-            rel2.to_y: "bg";
-            color_class: "/fg/normal/progress/bar";
-            offscale;
-         }
-         description { state: "inv" 0.0;
-            inherit: "default" 0.0;
-            rel1.to_x: "barend";
-            rel2.to_x: "bg";
-         }
-      }
-      part { name: "pulse"; type: RECT;
-         clip_to: "pulse_clip";
-         scale: 1;
-         description { state: "default" 0.0;
-            fixed: 1 1;
-            min: 16 8;
-            max: 16 9999;
-            rel.to: "elm.swallow.bar";
-            align: 0.0 0.5;
-            color_class: "/fg/normal/progress/pulse";
-         }
-         description { state: "end" 0.0;
-            inherit: "default" 0.0;
-            align: 1.0 0.5;
-         }
-      }
+part { name: "bar";
+   scale: 1;
+   clip_to: "fract_clip";
+   description { state: "default" 0.0;
+      image.normal: "win_rounded_small.png";
+      image.border: 5 5 5 5;
+      image.middle: SOLID;
+      fill.smooth: 0;
+      rel1.to: "bg";
+      rel2.to_x: "barend";
+      rel2.to_y: "bg";
+      color_class: "/fg/normal/progress/bar";
+      offscale;
+   }
+   description { state: "inv" 0.0;
+      inherit: "default" 0.0;
+      rel1.to_x: "barend";
+      rel2.to_x: "bg";
+   }
+}
+part { name: "pulse";
+   clip_to: "pulse_clip";
+   scale: 1;
+   description { state: "default" 0.0;
+      image.normal: "win_rounded_small.png";
+      image.border: 5 5 5 5;
+      image.middle: SOLID;
+      fill.smooth: 0;
+      fixed: 1 1;
+      min: 16 8;
+      max: 16 9999;
+      rel.to: "elm.swallow.bar";
+      align: 0.0 0.5;
+      color_class: "/fg/normal/progress/pulse";
+   }
+   description { state: "end" 0.0;
+      inherit: "default" 0.0;
+      align: 1.0 0.5;
+   }
+}
       part { name: "elm.text.status"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
@@ -1437,23 +1450,27 @@ group { name: "elm/progressbar/horizontal/double";
             align: 0.0 0.5;
          }
       }
-      part { name: "bar1"; type: RECT;
-         scale: 1;
-         insert_before: "bar";
-         clip_to: "fract_clip";
-         description { state: "default" 0.0;
-            rel1.to: "bg";
-            rel2.to_x: "barend1";
-            rel2.to_y: "bg";
-            color_class: "/fg/normal/progress/bar1";
-            offscale;
-         }
-         description { state: "inv" 0.0;
-            inherit: "default" 0.0;
-            rel1.to_x: "barend1";
-            rel2.to_x: "bg";
-         }
-      }
+part { name: "bar1";
+   scale: 1;
+   insert_before: "bar";
+   clip_to: "fract_clip";
+   description { state: "default" 0.0;
+      image.normal: "win_rounded_small.png";
+      image.border: 5 5 5 5;
+      image.middle: SOLID;
+      fill.smooth: 0;
+      rel1.to: "bg";
+      rel2.to_x: "barend1";
+      rel2.to_y: "bg";
+      color_class: "/fg/normal/progress/bar1";
+      offscale;
+   }
+   description { state: "inv" 0.0;
+      inherit: "default" 0.0;
+      rel1.to_x: "barend1";
+      rel2.to_x: "bg";
+   }
+}
    }
    programs {
       program { name: "inverted-on";
@@ -1505,11 +1522,15 @@ group { name: "elm/progressbar/vertical/double";
             align: 0.5 0.0;
          }
       }
-      part { name: "bar1"; type: RECT;
+      part { name: "bar1";
          scale: 1;
          insert_after: "barend";
          clip_to: "fract_clip";
          description { state: "default" 0.0;
+      image.normal: "win_rounded_small.png";
+      image.border: 5 5 5 5;
+      image.middle: SOLID;
+      fill.smooth: 0;
             rel1.to: "bg";
             rel2.to_y: "barend1";
             rel2.to_x: "bg";

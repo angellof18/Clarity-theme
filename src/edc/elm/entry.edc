@@ -202,6 +202,8 @@ group { name: "elm/scroller/entry_single/default";
             image.border: 12 12 12 12;
             image.middle: SOLID;
             fill.smooth: 0;
+	 rel1.offset: 3 2;
+	 rel2.offset: -3 -2;
             color_class: "/bg/normal/entry";
          }
       }

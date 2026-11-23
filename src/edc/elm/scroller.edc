@@ -9,6 +9,7 @@ group { name: "elm/scroller/base/default";
 
    images.image: "shadow_circle_horiz.png" COMP;
    images.image: "shadow_circle_vert.png" COMP;
+   images.image: "win_rounded_tiny.png" COMP;
 
    data.item: "focus_highlight" "on";
 
@@ -609,10 +610,14 @@ group { name: "elm/scroller/base/default";
          }
       }
 
-      part { name: "base_vbar"; type: RECT; mouse_events: 0;
+      part { name: "base_vbar"; mouse_events: 0;
          scale: 1;
          clip_to: "color_vbar";
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png";
+            image.border: 2 2 2 2;
+            image.middle: SOLID;
+            fill.smooth: 0;
             fixed: 1 1;
             rel.to: "elm.dragable.vbar";
             min: 5 15;
@@ -621,8 +626,8 @@ group { name: "elm/scroller/base/default";
          }
          description { state: "over" 0.0;
             inherit: "default" 0.0;
-            min: 15 15;
-            max: 15 999999;
+            min: 10 15;
+            max: 10 999999;
          }
       }
 
@@ -643,10 +648,14 @@ group { name: "elm/scroller/base/default";
          }
       }
 
-      part { name: "base_hbar"; type: RECT; mouse_events: 0;
+      part { name: "base_hbar"; mouse_events: 0;
          scale: 1;
          clip_to: "color_hbar";
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png";
+            image.border: 2 2 2 2;
+            image.middle: SOLID;
+            fill.smooth: 0;
             fixed: 1 1;
             rel.to: "elm.dragable.hbar";
             min: 15 5;
@@ -655,8 +664,8 @@ group { name: "elm/scroller/base/default";
          }
          description { state: "over" 0.0;
             inherit: "default" 0.0;
-            min: 15 15;
-            max: 999999 15;
+            min: 15 10;
+            max: 999999 10;
          }
       }
 

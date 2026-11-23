@@ -1,3 +1,6 @@
+#define FLOAT_GAP 3
+#define FLOAT_SIDE_GAP 8
+
 group { name: "e/shelf/default/base"; nomouse;
    images.image: "win_rounded.png" COMP;
    data {
@@ -19,8 +22,12 @@ group { name: "e/shelf/default/base"; nomouse;
          }
       }
       part { name: "bg";
+         scale: 1;
          description { state: "default" 0.0;
-	 image.normal: "win_rounded.png";
+            rel1.offset: FLOAT_SIDE_GAP FLOAT_GAP;
+            rel2.offset: (-1 - FLOAT_SIDE_GAP) (-1 - FLOAT_GAP);
+            offscale;
+            image.normal: "win_rounded.png";
             image.border: 12 12 12 12;
             image.middle: SOLID;
             fill.smooth: 0;
@@ -28,18 +35,24 @@ group { name: "e/shelf/default/base"; nomouse;
          }
          description { state: "vert" 0.0;
             inherit: "default" 0.0;
+            rel1.offset: FLOAT_GAP FLOAT_SIDE_GAP;
+            rel2.offset: (-1 - FLOAT_GAP) (-1 - FLOAT_SIDE_GAP);
          }
       }
       spacer { "sizer";
          scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 4 0;
-            rel2.offset: -5 -1;
+            rel1.to: "bg";
+            rel1.offset: 2 0;
+            rel2.to: "bg";
+            rel2.offset: -3 -1;
             offscale;
          }
          description { state: "vert" 0.0;
-            rel1.offset: 0 4;
-            rel2.offset: -1 -5;
+            rel1.to: "bg";
+            rel1.offset: 0 2;
+            rel2.to: "bg";
+            rel2.offset: -1 -3;
             offscale;
          }
       }
@@ -62,6 +75,7 @@ group { name: "e/shelf/default/base"; nomouse;
 #define ORIENT_SATE(_ORIENT, _STATE) \
          program { signal: "e,state,orientation,"_ORIENT; source: "e"; \
             action: STATE_SET _STATE 0.0; \
+            target: "bg"; \
             target: "sizer"; \
          }
       }
@@ -101,26 +115,30 @@ group { name: "e/shelf/default/inset"; nomouse;
       part { name: "clip"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 3 0;
-            rel2.offset: -4 -1;
+            rel1.offset: FLOAT_SIDE_GAP FLOAT_GAP;
+            rel2.offset: (-1 - FLOAT_SIDE_GAP) (-1 - FLOAT_GAP);
             offscale;
          }
          description { state: "vert" 0.0;
-            rel1.offset: 0 3;
-            rel2.offset: -1 -4;
+            rel1.offset: FLOAT_GAP FLOAT_SIDE_GAP;
+            rel2.offset: (-1 - FLOAT_GAP) (-1 - FLOAT_SIDE_GAP);
             offscale;
          }
       }
       spacer { "sizer";
          scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: (3 + SHELFPAD) SHELFPAD;
-            rel2.offset: (-4 - SHELFPAD) (-1 - SHELFPAD);
+            rel1.to: "clip";
+            rel1.offset: 2 0;
+            rel2.to: "clip";
+            rel2.offset: -3 -1;
             offscale;
          }
          description { state: "vert" 0.0;
-            rel1.offset: SHELFPAD (3 + SHELFPAD);
-            rel2.offset: (-1 - SHELFPAD) (-4 - SHELFPAD);
+            rel1.to: "clip";
+            rel1.offset: 0 2;
+            rel2.to: "clip";
+            rel2.offset: -1 -3;
             offscale;
          }
       }

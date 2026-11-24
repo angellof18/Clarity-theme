@@ -513,6 +513,7 @@ group { name: "e/modules/everything/thumbview/main/window";
 }
 
 group { name: "e/modules/everything/thumbview/main/scrollframe";
+   images.image: "win_rounded_tiny.png" COMP;
    script {
       public loop_x, loop_y;
 
@@ -991,10 +992,14 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
          }
       }
 
-      part { name: "base_vbar"; type: RECT; mouse_events: 0;
+      part { name: "base_vbar"; mouse_events: 0;
          scale: 1;
          clip_to: "color_vbar";
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png";
+            image.border: 2 2 2 2;
+            image.middle: SOLID;
+            fill.smooth: 0;
             fixed: 1 1;
             rel.to: "e.dragable.vbar";
             min: 5 15;
@@ -1003,8 +1008,8 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
          }
          description { state: "over" 0.0;
             inherit: "default" 0.0;
-            min: 15 15;
-            max: 15 999999;
+            min: 10 15;
+            max: 10 999999;
          }
       }
 
@@ -1025,10 +1030,14 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
          }
       }
 
-      part { name: "base_hbar"; type: RECT; mouse_events: 0;
+      part { name: "base_hbar"; mouse_events: 0;
          scale: 1;
          clip_to: "color_hbar";
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png";
+            image.border: 2 2 2 2;
+            image.middle: SOLID;
+            fill.smooth: 0;
             fixed: 1 1;
             rel.to: "e.dragable.hbar";
             min: 15 5;
@@ -1037,8 +1046,8 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
          }
          description { state: "over" 0.0;
             inherit: "default" 0.0;
-            min: 15 15;
-            max: 999999 15;
+            min: 15 10;
+            max: 999999 10;
          }
       }
    }

@@ -730,6 +730,7 @@ group { name: "e/modules/clock/calendar/dayname";
 }
 
 group { name: "e/modules/clock/calendar/day";
+   images.image: "win_rounded_small.png" COMP;
    script {
       public day_state = 0;
       evalstate() {
@@ -755,8 +756,12 @@ group { name: "e/modules/clock/calendar/day";
       }
    }
    parts {
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; mouse_events: 0;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_small.png";
+            image.border: 5 5 5 5;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/gadgets/clock/cal/day/date/normal";
             visible: 0;
          }

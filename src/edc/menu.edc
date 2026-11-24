@@ -244,10 +244,15 @@ group { name: "e/widgets/menu/default/submenu";
 }
 
 group { name: "e/widgets/menu/default/check";
+   images.image: "win_rounded_check.png" COMP;
    parts {
-      part { name: "bg"; type: RECT;
+      part { name: "bg";
          scale: 1;
          description { state: "default";
+            image.normal: "win_rounded_check.png";
+            image.border: 3 3 3 3;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/menu/item/check/base";
             aspect: 1.0 1.0; aspect_preference: BOTH;
             rel1.offset: 4 0;

@@ -33,6 +33,7 @@ Group: efl/check (@since 1.23)
 
 group { name: "efl/check";
    data.item: "version" "123";
+   images.image: "win_rounded_check.png" COMP;
    script {
       BUTTONMODE_SCRIPT2
    }
@@ -99,10 +100,14 @@ group { name: "efl/check";
             min: ICMIN ICMIN;
          }
       }
-      part { name: "base"; type: RECT;
+      part { name: "base";
          scale: 1;
          description { state: "default";
             fixed: 1 0;
+            image.normal: "win_rounded_check.png";
+            image.border: 3 3 3 3;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/check/base";
             align: 0.0 0.5;
             min: 13 13;

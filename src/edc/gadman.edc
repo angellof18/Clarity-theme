@@ -7,8 +7,8 @@ group { name: "e/gadman/popup";
          scale: 1;
          description { state: "default" 0.0;
             // Sin margen arriba ni a los lados (0), solo 10px de separación abajo (-11)
-            rel1.offset: 0 0;
-            rel2.offset: -1 -11;
+            rel1.offset: 10 10;
+            rel2.offset: -11 -11;
             offscale;
             image.normal: "win_rounded.png";
             image.border: 8 8 8 8;

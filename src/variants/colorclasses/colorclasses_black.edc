@@ -663,7 +663,7 @@ color_classes {
    color_class { name: "/bg/normal/fileman/desk/base";
       color:  43  43  43 0; }
    color_class { name: "/bg/normal/frame";
-      color:  24  24  24 255; }
+      color:  30  30  30 255; }
    color_class { name: "/bg/normal/frame/title";
       color:  58  58 58 255; }
    color_class { name: "/bg/normal/gadgets/clock/cal/day/date/today";
@@ -745,7 +745,7 @@ color_classes {
    color_class { name: ":bg";
       color:  15  15  15 255; }
    color_class { name: ":bg-semi";
-      color:  15  15  15 204; }
+      color:  15  15  15 165; }
    color_class { name: ":bg-trans";
       color:  64  64  64 192; }
    color_class { name: ":bg-dimmest";

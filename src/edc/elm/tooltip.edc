@@ -43,6 +43,8 @@ group { name: "elm/tooltip/base/default";
    images.image: "tooltip-edge-right-tip.png" COMP;
    images.image: "tooltip-edge-bottom-tip.png" COMP;
    images.image: "tooltip-edge-top-tip.png" COMP;
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_rounded.png" COMP;
    script {
       hide_corners() {
          set_state(PART:"corner-top-left", "default", 0.0);
@@ -160,13 +162,25 @@ group { name: "elm/tooltip/base/default";
          clip_to: "clipper";
          description { state: "default" 0.0;
             rel.to: "pop";
-            WIN_SHADOW;
+            image.normal: "win_shadow_rounded.png";
+            image.border: 32 32 32 32;
+            image.border_scale: 1;
+            image.border_scale_by: 1.0;
+            image.middle: 0;
+            rel1.offset: -21 -14;
+            rel2.offset: 20 27;
+            fill.smooth: 0;
+            offscale;
          }
       }
-      part { name: "pop"; type: RECT; mouse_events: 0;
+      part { name: "pop"; mouse_events: 0;
          scale: 1;
          clip_to: "clipper";
          description { state: "default" 0.0;
+            image.normal: "win_rounded_small.png";
+            image.border: 5 5 5 5;
+            image.middle: SOLID;
+            fill.smooth: 0;
             rel.to: "elm.swallow.content";
             rel1.offset: -10 -10;
             rel2.offset: 9 9;

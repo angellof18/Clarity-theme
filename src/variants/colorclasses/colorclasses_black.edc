@@ -739,7 +739,7 @@ color_classes {
   color_class { name: "/shadow/normal/frame";
       color:  255  255  255 0; }
   color_class { name: "/bg/normal/gadgets/pager/desk";
-      color:  44  44  44 255; }
+      color:  32  32  32 255; }
 
 
    color_class { name: ":bg";

@@ -734,6 +734,12 @@ color_classes {
       color:  255  255  255 255; }
   color_class { name: "/fg/pressed/gadgets/tasks/text/focused";
       color:  255  255  255 255; }
+  color_class { name: "/bg-alt/normal/list/item";
+      color:  17  17  17 255; }
+  color_class { name: "/shadow/normal/frame";
+      color:  255  255  255 0; }
+  color_class { name: "/bg/normal/gadgets/pager/desk";
+      color:  44  44  44 255; }
 
 
    color_class { name: ":bg";

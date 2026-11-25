@@ -9,7 +9,7 @@
    group { _NAME; \
       inherit: _SRC; \
       parts { \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list/item"; \
             } \
@@ -62,7 +62,7 @@
                text.ellipsis: 0.0; \
             } \
          } \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list/item"; \
             } \
@@ -73,13 +73,18 @@
 #define TREEPAD (ICMIN+4)
 
 group { "elm/genlist/item/group_index/default"; nomouse; program_source: "elm";
+   images.image: "win_rounded.png" COMP;
    data.item: "texts" "elm.text";
    data.item: "contents" "elm.swallow.icon elm.swallow.end";
    data.item: "treesize" TREEPAD;
 
    parts {
-      rect { "base";
+      image { "base";
          desc { "default";
+            image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/list/group";
          }
       }
@@ -172,6 +177,7 @@ group { "elm/genlist/item_compress/group_index/default"; nomouse;
 }
 
 group { "genlist_base"; inherit_only: 1; nomouse; program_source: "elm";
+   images.image: "win_rounded.png" COMP;
    target_group: "default" "elm.text";
    parts {
        rect { "event"; mouse;
@@ -185,18 +191,30 @@ group { "genlist_base"; inherit_only: 1; nomouse; program_source: "elm";
              link.base: "elm,state,disabled";
           }
        }
-       rect { "base";
+       image { "base";
           desc { "default";
+             image.normal: "win_rounded.png";
+             image.border: 12 12 12 12;
+             image.middle: SOLID;
+             fill.smooth: 0;
              color_class: "/bg/normal/list/item";
              link.base: "elm,state,even";
           }
           desc { "odd";
+             image.normal: "win_rounded.png";
+             image.border: 12 12 12 12;
+             image.middle: SOLID;
+             fill.smooth: 0;
              color_class: "/bg-alt/normal/list/item";
              link.base: "elm,state,odd";
           }
        }
-       image { "sel_base"; type: RECT; mouse_events: 0;
+       image { "sel_base"; mouse_events: 0;
           desc { "default";
+             image.normal: "win_rounded.png";
+             image.border: 12 12 12 12;
+             image.middle: SOLID;
+             fill.smooth: 0;
              color_class: "/bg/selected/list/item";
              hid;
              link.base: "elm,state,unselected";
@@ -1741,7 +1759,7 @@ COMPRESS_ODD("elm/genlist/tree_compress_odd/icon_top_text_bottom/default", "elm/
                text.ellipsis: 0.0; \
             } \
          } \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list/item"; \
             } \
@@ -2053,7 +2071,7 @@ COMPRESS_SUB_ODD("elm/genlist/tree_compress_odd/double_label/default", "elm/genl
                text.min: 0 1; \
             } \
          } \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list/item"; \
             } \
@@ -2446,7 +2464,7 @@ group { "elm/genlist/item/media/default"; nomouse;
                text.min: 0 1; \
             } \
          } \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list/item"; \
             } \
@@ -2997,7 +3015,7 @@ group { "elm/genlist/item_odd_compress/media-preview/default";
                text.min: 0 1; \
             } \
          } \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list/item"; \
             } \
@@ -3265,7 +3283,7 @@ COMPRESS_MODE_ODD("elm/genlist/tree_compress_odd/mode/default", "elm/genlist/tre
    group { name: _NAME; \
       inherit: _SRC; \
       parts { \
-         rect { "base"; \
+         image { "base"; \
             desc { "default"; \
                color_class: "/bg-alt/normal/list"; \
             } \
@@ -3273,16 +3291,25 @@ COMPRESS_MODE_ODD("elm/genlist/tree_compress_odd/mode/default", "elm/genlist/tre
       } \
    }
 group { "elm/genlist/item/edit/default"; nomouse;
+   images.image: "win_rounded.png" COMP;
    data.item: "contents" "elm.edit.icon.1 elm.edit.icon.2";
 //   data.item: "selectraise" "on";
 //   data.item: "focusraise" "on";
    program_source: "elm";
    parts {
-      rect { "base";
+      image { "base";
          desc { "default";
+            image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/normal/list";
          }
          desc { "odd";
+            image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg-alt/normal/list";
          }
       }
@@ -3296,8 +3323,12 @@ group { "elm/genlist/item/edit/default"; nomouse;
          action: STATE_SET "default";
          target: "base";
       }
-      rect { "sel_base";
+      image { "sel_base";
          desc { "default";
+            image.normal: "win_rounded.png";
+            image.border: 12 12 12 12;
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "/bg/selected/list/item";
             hid;
          }

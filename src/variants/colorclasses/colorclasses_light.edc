@@ -751,6 +751,8 @@ color_classes {
       color:  252  252  252 255; }
   color_class { name: "/shadow/normal/frame";
       color:  40  40  40 0; }
+  color_class { name: "/bg/normal/check/base";
+      color:  215  215  215 255; }
 
    color_class { name: ":bg";
       color:  255  255  255 255; }

@@ -185,6 +185,65 @@
       SHAD(_to, "_shcl8", _img, _l, _r, _t, _b, _scale) \
    }
 
+// Variante para grupos que HEREDAN de otro (menu, everything en comp.edc).
+// No agrega partes nuevas (edje no permite insertar varias partes en la misma
+// parte): extiende las franjas izquierda y derecha _rad px hacia dentro de la
+// ventana, lo que cubre los 4 cuadros de las esquinas redondeadas.
+// El parametro _before se ignora (se conserva para compatibilidad).
+#define WIN_SHAD_RI(_to, _clip, _img, _l, _r, _t, _b, _scale, _rad, _before) \
+   part { type: RECT; name: "_shcl1"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.offset: (-_l) (-_t); \
+         rel2.offset: (_r-1) -1; \
+         rel2.relative: 1.0 0.0; \
+         offscale; \
+      } \
+   } \
+   part { type: RECT; name: "_shcl2"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.offset: (-_l) 0; \
+         rel1.relative: 0.0 1.0; \
+         rel2.offset: (_r-1) (_b-1); \
+         offscale; \
+      } \
+   } \
+   part { type: RECT; name: "_shcl3"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.offset: (-_l) 0; \
+         rel2.offset: (_rad-1) -1; \
+         rel2.relative: 0.0 1.0; \
+         offscale; \
+      } \
+   } \
+   part { type: RECT; name: "_shcl4"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.offset: (-_rad) 0; \
+         rel1.relative: 1.0 0.0; \
+         rel2.offset: (_r-1) -1; \
+         offscale; \
+      } \
+   } \
+   part { name: "_sh1"; mouse_events: 0; \
+      SHAD(_to, "_shcl1", _img, _l, _r, _t, _b, _scale) \
+   } \
+   part { name: "_sh2"; mouse_events: 0; \
+      SHAD(_to, "_shcl2", _img, _l, _r, _t, _b, _scale) \
+   } \
+   part { name: "_sh3"; mouse_events: 0; \
+      SHAD(_to, "_shcl3", _img, _l, _r, _t, _b, _scale) \
+   } \
+   part { name: "_sh4"; mouse_events: 0; \
+      SHAD(_to, "_shcl4", _img, _l, _r, _t, _b, _scale) \
+   }
+
 #define WIN_SHADOW \
    image.normal: "win_shadow.png"; \
    image.border: 32 32 32 32; \

@@ -178,7 +178,7 @@ group { name: "e/widgets/border/default/border";
             rel2.to: "e.swallow.client";
          }
       }
-      WIN_SHAD_R("shadow_base", "shadow_clip", "win_shad_rounded.png", 21, 21, 14, 24, 0.5, 12)
+      WIN_SHAD_R("shadow_base", "shadow_clip", "win_shad_rounded.png", 21, 21, 14, 24, 0.5, 8)
 #ifdef BLUR_BEHIND
       snapshot { name: "title-blur"; mouse_events: 0;
          description { state: "default" 0.0;

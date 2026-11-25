@@ -15,6 +15,7 @@ Group: efl/slider/vertical (@since 1.23)
 	 Signal: efl,state,inverted,on
 */
 group { name: "efl/slider/horizontal";
+   images.image: "win_rounded_tiny.png" COMP;
    data.item: "version" "123";
 #define INVERT  16
    script {
@@ -60,9 +61,10 @@ group { name: "efl/slider/horizontal";
             offscale;
          }
       }
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             rel.to: "efl.bar";
             color_class: "/bg/normal/slider/base";
             min: 8 4;
@@ -74,8 +76,9 @@ group { name: "efl/slider/horizontal";
             color_class: "/bg/disabled/slider/base";
          }
       }
-      part { name: "glow"; type: RECT; mouse_events: 0;
+      part { name: "glow"; mouse_events: 0;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             color_class: "/fg/normal/slider/bar";
             rel1.to: "base";
             rel2.relative: 0.5 1.0;
@@ -87,6 +90,7 @@ group { name: "efl/slider/horizontal";
             color_class: "/fg/disabled/slider/bar";
          }
          description { state: "inverted" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             color_class: "/fg/normal/slider/bar";
             rel1.relative: 0.5 0.0;
             rel1.to_x: "knob";
@@ -186,6 +190,7 @@ group { name: "efl/slider/horizontal";
 }
 
 group { name: "efl/slider/vertical";
+   images.image: "win_rounded_tiny.png" COMP;
    data.item: "version" "123";
 #define INVERT  16
    script {
@@ -231,9 +236,10 @@ group { name: "efl/slider/vertical";
             offscale;
          }
       }
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             rel.to: "efl.bar";
             color_class: "/bg/normal/slider/base";
             min: 4 8;
@@ -245,8 +251,9 @@ group { name: "efl/slider/vertical";
             color_class: "/bg/disabled/slider/base";
          }
       }
-      part { name: "glow"; type: RECT; mouse_events: 0;
+      part { name: "glow"; mouse_events: 0;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             color_class: "/fg/normal/slider/bar";
             rel1.to: "base";
             rel2.relative: 1.0 0.5;
@@ -258,6 +265,7 @@ group { name: "efl/slider/vertical";
             color_class: "/fg/disabled/slider/bar";
          }
          description { state: "inverted" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             color_class: "/fg/disabled/slider/bar";
             rel1.relative: 0.0 0.5;
             rel1.to_y: "knob";
@@ -358,6 +366,7 @@ group { name: "efl/slider/vertical";
 
 //Range
 group { name: "efl/slider_interval/horizontal";
+   images.image: "win_rounded_tiny.png" COMP;
    data.item: "version" "123";
    script {
       public slmode;
@@ -402,9 +411,10 @@ group { name: "efl/slider_interval/horizontal";
             offscale;
          }
       }
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             rel.to: "efl.bar";
             color_class: "/bg/normal/slider/base";
             min: 8 4;
@@ -416,8 +426,9 @@ group { name: "efl/slider_interval/horizontal";
             color_class: "/bg/disabled/slider/base";
          }
       }
-      part { name: "glow"; type: RECT; mouse_events: 0;
+      part { name: "glow"; mouse_events: 0;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             color_class: "/fg/normal/slider/bar";
             rel1.relative: 0.5 0.0;
             rel2.relative: 0.5 1.0;
@@ -561,6 +572,7 @@ group { name: "efl/slider_interval/horizontal";
    }
 
 group { name: "efl/slider_interval/vertical";
+   images.image: "win_rounded_tiny.png" COMP;
    data.item: "version" "123";
    script {
       public slmode;
@@ -605,9 +617,10 @@ group { name: "efl/slider_interval/vertical";
             offscale;
          }
       }
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             rel.to: "efl.bar";
             color_class: "/bg/normal/slider/base";
             min: 4 8;
@@ -619,8 +632,9 @@ group { name: "efl/slider_interval/vertical";
             color_class: "/bg/disabled/slider/base";
          }
       }
-      part { name: "glow"; type: RECT; mouse_events: 0;
+      part { name: "glow"; mouse_events: 0;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             color_class: "/fg/normal/slider/bar";
             rel1.relative: 0.0 0.5;
             rel2.relative: 1.0 0.5;

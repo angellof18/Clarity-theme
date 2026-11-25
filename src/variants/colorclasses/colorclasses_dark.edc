@@ -647,7 +647,7 @@ color_classes {
    color_class { name: "/bg/normal/button";
       color:  50  50  50 255; }
    color_class { name: "/bg/normal/check/base";
-      color:  60  60  60 255; }
+      color:  50  50  50 255; }
    color_class { name: "/bg/normal/entry";
       color:  50  50  50 255; }
    color_class { name: "/bg/normal/entry/selection";
@@ -663,7 +663,7 @@ color_classes {
    color_class { name: "/bg/normal/fileman/desk/base";
       color:  43  43  43 0; }
    color_class { name: "/bg/normal/frame";
-      color:  50  50  50 255; }
+      color:  55  55  55 255; }
    color_class { name: "/bg/normal/frame/title";
       color:  78  78  78 255; }
    color_class { name: "/bg/normal/gadgets/clock/cal/day/date/today";
@@ -671,9 +671,9 @@ color_classes {
    color_class { name: "/bg/normal/gadgets/music_control/base";
       color:  32  32  32 255; }
    color_class { name: "/bg/normal/radio/base";
-      color:  60  60  60 255; }
+      color:  50  50  50 255; }
    color_class { name: "/bg/normal/titlebar";
-      color:  43  43  43 255; }
+      color:  60  60  60 255; }
    color_class { name: "/bg/pressed/button";
       color:  88  88  88 255; }
    color_class { name: "/bg/pressed/gadgets/tasks/base";
@@ -720,9 +720,9 @@ color_classes {
   color_class { name: "/fg/normal/gadgets/tasks/focused";
       color:  255  255  255 255; }
   color_class { name: "/bg/normal/gadgets/tasks/base/iconified";
-      color:  43  43  43 255; }
+      color:  50  50  50 255; }
   color_class { name: "/bg/normal/gadgets/tasks/base/normal";
-      color:  43  43  43 255; }
+      color:  50  50  50 255; }
   color_class { name: "/bg/normal/gadgets/tasks/base/focused";
       color:  55  132  222 255; }
   color_class { name: "/fg/normal/separator";
@@ -733,6 +733,12 @@ color_classes {
       color:  255  255  255 255; }
   color_class { name: "/fg/pressed/gadgets/tasks/text/focused";
       color:  255  255  255 255; }
+  color_class { name: "/bg/normal/gadgets/pager/desk";
+      color:  50  50  50 255; }
+  color_class { name: "/bg-alt/normal/list/item";
+      color:  40  40  40 255; }
+  color_class { name: "/shadow/normal/frame";
+      color:  40  40  40 0; }
 
 
    color_class { name: ":bg";

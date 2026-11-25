@@ -122,6 +122,69 @@
       SHAD(_to, "_shcl4", _img, _l, _r, _t, _b, _scale) \
    }
 
+// Igual que WIN_SHAD, pero para ventanas con esquinas redondeadas (_rad = radio).
+// Ademas de las 4 franjas laterales, dibuja la sombra en los 4 cuadros de las
+// esquinas de la ventana (_rad x _rad), para que no quede un hueco claro entre
+// el arco redondeado y la sombra. Usar con una imagen de nucleo redondeado
+// (win_shad_rounded.png).
+#define WIN_SHAD_R(_to, _clip, _img, _l, _r, _t, _b, _scale, _rad) \
+   WIN_SHAD(_to, _clip, _img, _l, _r, _t, _b, _scale) \
+   part { type: RECT; name: "_shcl5"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.offset: 0 0; \
+         rel2.relative: 0.0 0.0; \
+         rel2.offset: (_rad-1) (_rad-1); \
+         offscale; \
+      } \
+   } \
+   part { type: RECT; name: "_shcl6"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.relative: 1.0 0.0; \
+         rel1.offset: (-_rad) 0; \
+         rel2.relative: 1.0 0.0; \
+         rel2.offset: -1 (_rad-1); \
+         offscale; \
+      } \
+   } \
+   part { type: RECT; name: "_shcl7"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.relative: 0.0 1.0; \
+         rel1.offset: 0 (-_rad); \
+         rel2.relative: 0.0 1.0; \
+         rel2.offset: (_rad-1) -1; \
+         offscale; \
+      } \
+   } \
+   part { type: RECT; name: "_shcl8"; \
+      scale: 1; clip_to: _clip; \
+      description { state: "default" 0.0; \
+         rel.to: _to; \
+         rel1.relative: 1.0 1.0; \
+         rel1.offset: (-_rad) (-_rad); \
+         rel2.relative: 1.0 1.0; \
+         rel2.offset: -1 -1; \
+         offscale; \
+      } \
+   } \
+   part { name: "_sh5"; mouse_events: 0; \
+      SHAD(_to, "_shcl5", _img, _l, _r, _t, _b, _scale) \
+   } \
+   part { name: "_sh6"; mouse_events: 0; \
+      SHAD(_to, "_shcl6", _img, _l, _r, _t, _b, _scale) \
+   } \
+   part { name: "_sh7"; mouse_events: 0; \
+      SHAD(_to, "_shcl7", _img, _l, _r, _t, _b, _scale) \
+   } \
+   part { name: "_sh8"; mouse_events: 0; \
+      SHAD(_to, "_shcl8", _img, _l, _r, _t, _b, _scale) \
+   }
+
 #define WIN_SHADOW \
    image.normal: "win_shadow.png"; \
    image.border: 32 32 32 32; \

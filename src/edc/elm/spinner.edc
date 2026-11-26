@@ -1,14 +1,16 @@
 group { name: "elm/spinner/base/default";
    alias: "elm/spinner/base/colorselector/default";
+   images.image: "win_rounded_small.png" COMP;
    parts {
       part { name: "clip"; type: RECT;
          description { state: "default" 0.0;
             rel.to: "elm.swallow.text_button";
          }
       }
-      part { name: "bg"; type: RECT;
+      part { name: "bg";
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_small.png"; image.border: 5 5 5 5; image.middle: SOLID; fill.smooth: 0;
             color_class: "/bg/normal/spinner/base";
          }
       }

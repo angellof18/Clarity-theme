@@ -36,6 +36,8 @@ group { name: "elm/notify/block_events/default";
 }
 
 group { name: "elm/notify/top/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    data.item: "hide_finished_signal" "on";
    parts {
       part { name: "clip"; type: RECT;
@@ -53,16 +55,17 @@ group { name: "elm/notify/top/default";
          clip_to: "clip";
          description { state: "default" 0.0;
             rel.to: "base";
-            WIN_SHADOW;
+            image.normal: "win_shadow_popup.png"; image.border: 32 32 32 32; image.border_scale: 1; image.border_scale_by: 1.0; image.middle: 0; rel1.offset: -21 -14; rel2.offset: 20 27; fill.smooth: 0; offscale;
          }
          description { state: "visible" 0.0;
             inherit: "default" 0.0;
          }
       }
-      part { name: "base"; type: RECT;
+      part { name: "base";
          clip_to: "clip";
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_small.png"; image.border: 5 5 5 5; image.middle: SOLID; fill.smooth: 0;
             color_class: "/bg/normal/popup/base";
             rel1.offset: 10 10;
             rel2.offset: -11 -11;

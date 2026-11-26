@@ -598,6 +598,7 @@ group { name: "e/widgets/border/default/border";
          clip_to: "bottom";
          description { state: "default" 0.0;
             rel.to: "bottom";
+	 rel1.offset: 0 -3;
             image.normal: "win_rounded_bottom.png";
             image.border: 12 12 0 12;
             image.middle: SOLID;

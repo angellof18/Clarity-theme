@@ -721,9 +721,9 @@ color_classes {
   color_class { name: "/fg/normal/gadgets/tasks/focused";
       color:  255  255  255 255; }
   color_class { name: "/bg/normal/gadgets/tasks/base/iconified";
-      color:  32  32  32 255; }
+      color:  82  82  82 125; }
   color_class { name: "/bg/normal/gadgets/tasks/base/normal";
-      color:  32  32  32 255; }
+      color:  82  82  82 125; }
   color_class { name: "/bg/normal/gadgets/tasks/base/focused";
       color:  55  132  222 255; }
   color_class { name: "/fg/normal/separator";
@@ -739,13 +739,13 @@ color_classes {
   color_class { name: "/shadow/normal/frame";
       color:  255  255  255 0; }
   color_class { name: "/bg/normal/gadgets/pager/desk";
-      color:  32  32  32 255; }
+      color:  82  82  82 125; }
 
 
    color_class { name: ":bg";
       color:  15  15  15 255; }
    color_class { name: ":bg-semi";
-      color:  15  15  15 165; }
+      color:  15  15  15 191; }
    color_class { name: ":bg-trans";
       color:  64  64  64 192; }
    color_class { name: ":bg-dimmest";

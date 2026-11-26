@@ -1,5 +1,7 @@
 group { name: "elm/notify/block_events/popup/default";
    inherit: "elm/notify/block_events/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    parts.part { "block_events";
       desc { "visible";
          color_class: "/dim/normal/popup";
@@ -38,16 +40,18 @@ group { name: "elm/notify/block_events/popup/transparent";
 
 group { name: "elm/notify/top/popup/default";
    inherit: "elm/notify/top/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
 #define OVERRIDE_BASE() \
    parts { \
       part { name: "shadow"; mouse_events: 0; \
          description { state: "default" 0.0; \
             rel.to: "base"; \
-            WIN_SHADOW; \
+            image.normal: "win_shadow_popup.png"; image.border: 32 32 32 32; image.border_scale: 1; image.border_scale_by: 1.0; image.middle: 0; rel1.offset: -21 -14; rel2.offset: 20 27; fill.smooth: 0; offscale; \
             color_class: "/shadow/normal/popup"; \
          } \
       } \
-      part { name: "base"; type: RECT; \
+      part { name: "base"; \
          description { state: "default" 0.0; \
             color_class: "/bg/normal/popup/base"; \
          } \
@@ -61,41 +65,57 @@ group { name: "elm/notify/top/popup/default";
 
 group { name: "elm/notify/bottom/popup/default";
    inherit: "elm/notify/bottom/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/left/popup/default";
    inherit: "elm/notify/left/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/right/popup/default";
    inherit: "elm/notify/right/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/top_left/popup/default";
    inherit: "elm/notify/top_left/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/top_right/popup/default";
    inherit: "elm/notify/top_right/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/bottom_left/popup/default";
    inherit: "elm/notify/bottom_left/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/bottom_right/popup/default";
    inherit: "elm/notify/bottom_right/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 
 group { name: "elm/notify/center/popup/default";
    inherit: "elm/notify/center/default";
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    OVERRIDE_BASE()
 }
 #undef OVERRIDE_BASE

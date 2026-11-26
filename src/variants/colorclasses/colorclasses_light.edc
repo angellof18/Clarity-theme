@@ -753,6 +753,8 @@ color_classes {
       color:  40  40  40 0; }
   color_class { name: "/bg/normal/check/base";
       color:  240  240  240 255; }
+  color_class { name: "/bg/normal/popup/base";
+      color:  228  228  228 255; }
 
    color_class { name: ":bg";
       color:  255  255  255 255; }

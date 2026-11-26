@@ -626,7 +626,7 @@ group { name: "e/comp/effects/iconify/default";
          source: "e";
          filter: "mover" "default";
          action: STATE_SET "custom" 0.0;
-         transition: ACCELERATE_FACTOR COMP_EFFECT_DURATION 2 USE_DURATION_FACTOR 1 CURRENT;
+         transition: DECELERATE_FACTOR 0.28 3 USE_DURATION_FACTOR 1 CURRENT;
          target: "mover";
          after: "done";
       }
@@ -636,7 +636,7 @@ group { name: "e/comp/effects/iconify/default";
          source: "e";
          filter: "mover" "custom";
          action: STATE_SET "default" 0.0;
-         transition: DECELERATE_FACTOR COMP_EFFECT_DURATION_FAST 2 USE_DURATION_FACTOR 1 CURRENT;
+         transition: DECELERATE_FACTOR 0.25 3 USE_DURATION_FACTOR 1 CURRENT;
          target: "mover";
          after: "done";
       }

@@ -526,6 +526,9 @@ group { name: "elm/hover/base/hoversel_vertical/default";
    alias: "elm/hover/base/combobox_vertical/default";
    images.image: "shad_angle_t.png" COMP;
    images.image: "shad_angle_b.png" COMP;
+   images.image: "win_rounded_small.png" COMP;
+   images.image: "win_rounded_tiny.png" COMP;
+   images.image: "win_shadow_popup.png" COMP;
    data.item: "dismiss" "on";
    // max_size limits the maximum size of expanded hoversel
    // when it's scrollable.
@@ -579,18 +582,19 @@ group { name: "elm/hover/base/hoversel_vertical/default";
          scale: 1;
          description { state: "default" 0.0;
             rel.to: "button_image";
-            WIN_SHADOW_ANGLE_SMALL("shad_angle_t.png");
-            color_class: "/bg/normal/hoversel";
+            image.normal: "win_shadow_popup.png"; image.border: 32 32 32 32; image.border_scale: 1; image.border_scale_by: 1.0; image.middle: 0;
+            rel1.offset: -21 -14; rel2.offset: 20 27;
+            fill.smooth: 0;
+            offscale;
          }
          description { state: "bottom" 0.0;
-            rel.to: "button_image";
-            WIN_SHADOW_ANGLE_SMALL("shad_angle_b.png");
-            color_class: "/bg/normal/hoversel";
+            inherit: "default" 0.0;
          }
       }
-      part { name: "button_image"; type: RECT;
+      part { name: "button_image";
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_small.png"; image.border: 5 5 5 5; image.middle: SOLID; fill.smooth: 0;
             rel1.to_x: "limit0";
             rel2.to_x: "limit1";
             rel1.to_y: "elm.swallow.slot.top";
@@ -647,14 +651,18 @@ group { name: "elm/hover/base/hoversel_vertical/default";
             rel2.to_x: "elm.swallow.slot.bottom";
          }
       }
-      part { name: "select_line"; type: RECT; mouse_events: 0;
+      part { name: "select_line"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
+            image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             fixed: 1 1;
             align: 1.0 0.5;
             min: 5 0;
             rel.to: "button_image";
             rel1.relative: 1.0 0.0;
+            rel1.offset: 0 5;
+            rel2.offset: -1 -6;
+            visible: 0;
             color_class: "/bg/selected/hoversel/menu/bar";
          }
       }

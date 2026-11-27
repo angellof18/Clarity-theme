@@ -168,6 +168,7 @@ ICON("unlock",  "i-padlock-unlock")
       } \
    }
 
+ICON("update", "i-update")
 ICON("system-restart", "i-system-restart")
 ICON("system-shutdown", "i-system-shutdown")
 ICON("system-suspend", "i-system-suspend")

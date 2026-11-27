@@ -103,21 +103,33 @@ group { name: "e/modules/packagekit/main";
    parts {
       part { name: "base";
          description { state: "default" 0.0;
+            min: 16 16;
+            rel1.relative: 0.125 0.125;
+            rel2.relative: 0.875 0.875;
             aspect: 1.0 1.0; aspect_preference: BOTH;
             color_class: "/fg/normal/gadgets/packagekit/base";
-            image.normal: "pkg_base";
+            image.normal: "i-update";
+            map.on: 1;
+            map.smooth: 1;
+            map.rotation.center: "base";
+         }
+         description { state: "spin" 0.0;
+            inherit: "default" 0.0;
+            map.rotation.z: 360;
          }
       }
       part { name: "shade";
          description { state: "default" 0.0;
             rel.to: "base";
             image.normal: "pkg_shade";
+            visible: 0;
          }
       }
       part { name: "label";
          description { state: "default" 0.0;
             rel.to: "base";
             image.normal: "pkg_label";
+            visible: 0;
             color_class: "/fg/normal/gadgets/packagekit/label";
          }
       }
@@ -147,8 +159,8 @@ group { name: "e/modules/packagekit/main";
          description { state: "updated" 0.0;
             inherit: "default" 0.0;
             visible: 1;
-            rel1.relative: (15/40) (15/40);
-            rel2.relative: (25/40) (25/40);
+            rel1.relative: (12/40) (12/40);
+            rel2.relative: (28/40) (28/40);
             image.normal: "pkg-ok.png";
             color_class: "/fg/normal/gadgets/packagekit/status/ok";
          }
@@ -177,6 +189,7 @@ group { name: "e/modules/packagekit/main";
          description { state: "default" 0.0;
             fixed: 1 1;
             image.normal: "pkg-busy1.png";
+            visible: 0;
             rel1.relative: (7/40) (7/40);
             rel2.relative: (33/40) (33/40);
             map.on: 1;
@@ -194,6 +207,7 @@ group { name: "e/modules/packagekit/main";
          description { state: "default" 0.0;
             fixed: 1 1;
             image.normal: "pkg-busy2.png";
+            visible: 0;
             rel1.relative: (7/40) (7/40);
             rel2.relative: (33/40) (33/40);
             map.on: 1;
@@ -211,6 +225,7 @@ group { name: "e/modules/packagekit/main";
          description { state: "default" 0.0;
             fixed: 1 1;
             image.normal: "pkg-busy3.png";
+            visible: 0;
             rel1.relative: (7/40) (7/40);
             rel2.relative: (33/40) (33/40);
             map.on: 1;
@@ -228,6 +243,7 @@ group { name: "e/modules/packagekit/main";
          description { state: "default" 0.0;
             fixed: 1 1;
             image.normal: "pkg-busy4.png";
+            visible: 0;
             rel1.relative: (7/40) (7/40);
             rel2.relative: (33/40) (33/40);
             map.on: 1;
@@ -246,6 +262,7 @@ group { name: "e/modules/packagekit/main";
          signal: "e,state,hung"; source: "e";
          action: STATE_SET "spin" 0.0;
          transition: LINEAR 1.0;
+         target: "base";
          target: "busy1";
          target: "busy2";
          target: "busy3";
@@ -254,6 +271,7 @@ group { name: "e/modules/packagekit/main";
       }
       program { name: "spin2";
          action: STATE_SET "default" 0.0;
+         target: "base";
          target: "busy1";
          target: "busy2";
          target: "busy3";
@@ -281,6 +299,7 @@ group { name: "e/modules/packagekit/main";
       }
       program { name: "spin4";
          action: STATE_SET "default" 0.0;
+         target: "base";
          target: "busy1";
          target: "busy2";
          target: "busy3";

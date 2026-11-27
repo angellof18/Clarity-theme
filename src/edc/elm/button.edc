@@ -1011,6 +1011,7 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
 
 group { name: "elm/button/base/hoversel_vertical/default";
    inherit: "elm/button/base/default";
+   images.image: "combo_arrow_down.png" COMP;
    alias: "elm/button/base/hoversel_vertical/entry";
    alias: "elm/button/base/hoversel_horizontal/default";
    alias: "elm/button/base/hoversel_horizontal/entry";
@@ -1097,26 +1098,29 @@ group { name: "elm/button/base/hoversel_vertical/default";
             text.align: 0.0 0.5;
          }
       }
-      rect { "select_line"; nomouse;
+      image { "select_line"; nomouse;
          scale: 1;
          desc { "default";
+            image.normal: "combo_arrow_down.png";
             fixed: 1 1;
             align: 1.0 0.5;
-            min: 5 5;
+            min: 10 6;
+            max: 10 6;
             rel1.to: "base";
-            rel1.relative: 1.0 0.0;
-            rel1.offset: -1 0;
+            rel1.relative: 1.0 0.5;
+            rel1.offset: -6 0;
             rel2.to: "base";
-            rel2.offset: -1 -1;
-            color_class: "/fg/normal/hoversel/selector";
+            rel2.relative: 1.0 0.5;
+            rel2.offset: -6 0;
+            color_class: "/fg/normal/hoversel/button";
          }
          desc { "pressed";
             inherit: "default";
-            color_class: "/fg/pressed/hoversel/selector";
+            color_class: "/fg/pressed/hoversel/button";
          }
          desc { "disabled";
             inherit: "default";
-            color_class: "/fg/disabled/hoversel/selector";
+            color_class: "/fg/disabled/hoversel/button";
          }
       }
    }
@@ -1437,6 +1441,7 @@ group { name: "elm/button/base/combobox_vertical/default";
    images.image: "win_shadow.png" COMP;
    images.image: "win_rounded_small.png" COMP;
    images.image: "win_rounded_tiny.png" COMP;
+   images.image: "combo_arrow_down.png" COMP;
    parts {
       part { name: "shadow"; mouse_events: 0;
          scale: 1;
@@ -1505,6 +1510,7 @@ group { name: "elm/button/base/combobox_vertical/default";
          scale: 1;
          desc { "default";
             image.normal: "i-arrow-u";
+            visible: 0;
             min: 15 15;
             max: 15 15;
             rel.to: "event2";
@@ -1524,21 +1530,20 @@ group { name: "elm/button/base/combobox_vertical/default";
       image { name: "expand2";
          scale: 1;
          desc { "default";
-            image.normal: "i-arrow-d";
-            min: 15 15;
-            max: 15 15;
+            image.normal: "combo_arrow_down.png";
+            min: 10 6;
+            max: 10 6;
             rel.to: "event2";
-            rel1.relative: 0.0 0.5;
             fixed: 1 1;
-            color_class: "/fg/normal/combobox/button";
+            color_class: "/fg/normal/entry/text";
          }
          desc { "pressed";
             inherit;
-            color_class: "/fg/pressed/combobox/button";
+            color_class: "/fg/normal/entry/text";
          }
          desc { "disabled";
             inherit;
-            color_class: "/fg/disabled/combobox/button";
+            color_class: "/fg/disabled/entry/text";
          }
       }
       rect { name: "event2";
@@ -1561,11 +1566,12 @@ group { name: "elm/button/base/combobox_vertical/default";
             image.normal: "win_rounded_tiny.png"; image.border: 2 2 2 2; image.middle: SOLID; fill.smooth: 0;
             fixed: 1 1;
             align: 1.0 0.5;
-            min: 5 5;
+            min: 0 0;
             rel.to: "base";
             rel1.relative: 1.0 0.0;
             rel1.offset: -1 5;
             rel2.offset: -1 -6;
+            visible: 0;
             color_class: "/fg/normal/combobox/selector";
          }
          desc { "pressed";

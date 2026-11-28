@@ -66,12 +66,12 @@ group { name: "e/modules/conf/main";
             rel1.relative: 0.16 0.16;
             rel2.relative: 0.84 0.84;
             image.normal: "spanner.png";
-            color_class: "/fg/normal/icon";
+            color_class: ":fg";
             offscale;
          }
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
-            color_class: "/fg/pressed/icon";
+            color_class: ":fg";
          }
       }
    }

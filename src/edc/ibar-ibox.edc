@@ -58,8 +58,9 @@ group { name: "e/modules/ibox/icon";
          scale: 1;
          description { state: "default" 0.0;
             rel.to: "content";
-            rel1.offset: 3 3;
-            rel2.offset: -4 -4;
+            rel1.offset: 2 1;
+            rel2.offset: -3 -2;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
             offscale;
          }
          description { state: "bounce1" 0.0;
@@ -82,6 +83,7 @@ group { name: "e/modules/ibox/icon";
             rel1.relative: 0.1 0.1;
             rel2.relative: 0.9 0.9;
             align: 0.5 0.5;
+            aspect: 1.0 1.0; aspect_preference: BOTH;
             offscale;
          }
          description { state: "bounce1" 0.0;
@@ -333,8 +335,8 @@ group { name: "e/modules/ibox/icon_overlay";
       part { name: "base"; type: SPACER;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 3 4;
-            rel2.offset: -4 -4;
+            rel1.offset: 2 1;
+            rel2.offset: -3 -2;
             offscale;
          }
          description { state: "bounce1" 0.0;
@@ -499,10 +501,8 @@ group { name: "e/modules/ibox/icon_overlay";
       program { name: "go_active";
          signal: "e,state,focused"; source: "e";
          script {
-           set_state(PART:"background", "visible", 0.0);
            set_int(active, 1);
          }
-         after: "go_active2";
       }
       program { name: "go_active2";
          action: STATE_SET "hidden" 0.0;

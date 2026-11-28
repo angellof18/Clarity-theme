@@ -78,21 +78,6 @@ group { name: "e/modules/packagekit/icon/security";
 
 group { name: "e/modules/packagekit/main";
    max: 160 160;
-   set { name: "pkg_base";
-      image { image: "pkg-base-160.png"  COMP; size: 81 81 99999 99999; }
-      image { image: "pkg-base-080.png"  COMP; size: 41 41 80 80 99999; }
-      image { image: "pkg-base-040.png"  COMP; size:  0  0 40 40; }
-   }
-   set { name: "pkg_shade";
-      image { image: "pkg-shade-160.png"  COMP; size: 81 81 99999 99999; }
-      image { image: "pkg-shade-080.png"  COMP; size: 41 41 80 80 99999; }
-      image { image: "pkg-shade-040.png"  COMP; size:  0  0 40 40; }
-   }
-   set { name: "pkg_label";
-      image { image: "pkg-label-160.png"  COMP; size: 81 81 99999 99999; }
-      image { image: "pkg-label-080.png"  COMP; size: 41 41 80 80 99999; }
-      image { image: "pkg-label-040.png"  COMP; size:  0  0 40 40; }
-   }
    images.image: "pkg-ok.png" COMP;
    images.image: "pkg-err.png" COMP;
 
@@ -116,21 +101,6 @@ group { name: "e/modules/packagekit/main";
          description { state: "spin" 0.0;
             inherit: "default" 0.0;
             map.rotation.z: 360;
-         }
-      }
-      part { name: "shade";
-         description { state: "default" 0.0;
-            rel.to: "base";
-            image.normal: "pkg_shade";
-            visible: 0;
-         }
-      }
-      part { name: "label";
-         description { state: "default" 0.0;
-            rel.to: "base";
-            image.normal: "pkg_label";
-            visible: 0;
-            color_class: "/fg/normal/gadgets/packagekit/label";
          }
       }
       part { name: "num_updates"; type: TEXT;

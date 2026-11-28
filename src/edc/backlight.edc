@@ -40,7 +40,7 @@ group { name: "e/modules/backlight/main";
          }
          description { state: "full" 0.0;
             inherit: "default" 0.0;
-            image.normal: "backlight_full";
+            image.normal: "backlight_high";
          }
       }
    }

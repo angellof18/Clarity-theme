@@ -78,7 +78,6 @@ group { name: "e/modules/packagekit/icon/security";
 
 group { name: "e/modules/packagekit/main";
    max: 160 160;
-   images.image: "pkg-ok.png" COMP;
    images.image: "pkg-err.png" COMP;
 
    images.image: "pkg-busy1.png" COMP;
@@ -131,7 +130,7 @@ group { name: "e/modules/packagekit/main";
             visible: 1;
             rel1.relative: (12/40) (12/40);
             rel2.relative: (28/40) (28/40);
-            image.normal: "pkg-ok.png";
+            image.normal: "i-check";
             color_class: "/fg/normal/gadgets/packagekit/status/ok";
          }
          description { state: "error" 0.0;

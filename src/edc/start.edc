@@ -16,9 +16,13 @@ group { name: "e/modules/start/main";
    max: 128 128;
    parts {
       part { name: "logo";
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "m_logo.png";
-            rel1.offset: 0 2;
+            rel1.offset: 2 1;
+            rel2.offset: -3 -2;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            offscale;
             color: 255 255 255 255;
             vis;
          }

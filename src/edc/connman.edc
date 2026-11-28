@@ -71,17 +71,17 @@ group { name: "e/modules/connman/main";
 	 rel1.relative: 0.125 0.125;
             rel2.relative: 0.875 0.875;
             aspect: 1.0 1.0; aspect_preference: BOTH;
-            image.normal: "conn_wifi_disconnected";
+            image.normal: "conn_wifi_4";
             color_class: "/fg/disabled/gadgets/connman/wifi/connected";
          }
          description { state: "connected" 0.0;
             inherit: "default" 0.0;
-            image.normal: "conn_wifi_1";
+            image.normal: "conn_wifi_4";
             color_class: "/fg/normal/gadgets/connman/wifi/connected";
          }
          description { state: "online" 0.0;
             inherit: "default" 0.0;
-            image.normal: "conn_wifi_1";
+            image.normal: "conn_wifi_4";
             color_class: "/fg/selected/gadgets/connman/wifi/connected";
          }
       }
@@ -91,7 +91,7 @@ group { name: "e/modules/connman/main";
          description { state: "default" 0.0;
             rel.to: "wifi-base";
             image.normal: "conn_wifi_1";
-            color_class: "/fg/normal/gadgets/connman/wifi/signal";
+            color_class: ":fg";
             color: 255 255 255 255;
          }
          description { state: "default" 0.25;

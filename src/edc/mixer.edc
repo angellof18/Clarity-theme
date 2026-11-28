@@ -29,6 +29,7 @@ group { name: "e/modules/mixer/main";
    }
    parts {
       part { name: "icon"; type: IMAGE;
+         scale: 1;
          description { state: "default" 0.0;
             min: 16 16;
 	 rel1.relative: 0.125 0.125;

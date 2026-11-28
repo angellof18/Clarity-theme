@@ -50,7 +50,6 @@ I160("vol_muted", "volume-muted")
 I160("conn_eth_connected", "ethernet-connected")
 I160("conn_eth_disconnected", "ethernet-disconnected")
 
-I160("conn_wifi_disconnected", "wireless-disconnected")
 I160("conn_wifi_1", "wifi-1")
 I160("conn_wifi_2", "wifi-2")
 I160("conn_wifi_3", "wifi-3")
@@ -60,7 +59,6 @@ I160("conn_wifi_4", "wifi-4")
 I160("backlight_low", "brightness-low")
 I160("backlight_medium", "brightness-medium")
 I160("backlight_high", "brightness-high")
-I160("backlight_full", "brightness-full")
 
 // Registro de íconos de temperatura en ic.edc
 I160("temp_low", "temperature-low")
